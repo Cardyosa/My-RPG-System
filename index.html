@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <title>Leveling Up — RPG System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><div><b>LEVELING UP</b><small>YOUR REAL-LIFE RPG</small></div></div>
+      <div class="top-stats"><span>◈ <b id="headerLevel">LVL 1</b></span><span>✧ <b id="headerCoins">0</b> COINS</span></div>
+    </header>
+    <main>
+      <section class="hero panel">
+        <div class="hero-copy">
+          <p class="eyebrow">PLAYER PROFILE / <span id="rankLabel">E-RANK</span></p>
+          <h1>Become the <em>strongest version</em><br>of yourself.</h1>
+          <p class="muted">Every real-world action earns progress. Complete quests, gain XP, and build your character.</p>
+          <div class="level-line"><b id="levelText">LEVEL 1</b><span id="xpText">0 / 100 XP</span></div>
+          <div class="xp-track"><div id="xpFill"></div></div>
+        </div>
+        <div class="hero-orb">✦<small>PLAYER<br>AWAKENED</small></div>
+      </section>
+
+      <nav class="tabs" aria-label="Main navigation">
+        <button class="tab active" data-tab="dashboard">Overview</button>
+        <button class="tab" data-tab="character">Character</button>
+        <button class="tab" data-tab="quests">Quests</button>
+        <button class="tab" data-tab="stats">Attributes</button>
+        <button class="tab" data-tab="shop">Shop</button>
+      </nav>
+
+      <section class="view active" id="dashboard">
+        <div class="section-heading"><div><p class="eyebrow">YOUR JOURNEY</p><h2>Player overview</h2></div><span class="rank-chip" id="rankChip">E-RANK</span></div>
+        <div class="dashboard-grid">
+          <article class="panel character-card">
+            <div class="card-heading"><h3>Current character</h3><button class="text-button" data-goto="character">Customize ↗</button></div>
+            <div class="avatar-stage"><div class="avatar" id="dashAvatar"><div class="avatar-hair"></div><div class="avatar-face"><i></i><i></i><b></b></div><div class="avatar-neck"></div><div class="avatar-body"></div><div class="avatar-accessory"></div></div></div>
+            <div class="character-name"><b id="displayName">CARDoSA</b><span id="equippedLabel">Starter outfit</span></div>
+          </article>
+          <article class="panel">
+            <div class="card-heading"><h3>Character stats</h3><button class="text-button" data-goto="stats">Upgrade ↗</button></div>
+            <div class="stat-list" id="miniStats"></div>
+            <p class="muted small" id="pointsSummary">0 attribute points available</p>
+          </article>
+          <article class="panel quest-summary">
+            <div class="card-heading"><h3>Today's quests</h3><button class="text-button" data-goto="quests">View all ↗</button></div>
+            <div id="todaySummary"></div>
+          </article>
+          <article class="panel">
+            <div class="card-heading"><h3>Progress record</h3></div>
+            <div class="record"><span>Total XP</span><b id="totalXp">0</b></div>
+            <div class="record"><span>Quests completed</span><b id="completedCount">0</b></div>
+            <div class="record"><span>Coins earned</span><b id="earnedCoins">0</b></div>
+            <div class="record"><span>Current streak</span><b id="streak">0 days</b></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="character">
+        <div class="section-heading"><div><p class="eyebrow">APPEARANCE</p><h2>Character customization</h2></div></div>
+        <div class="custom-grid">
+          <article class="panel preview-panel"><p class="eyebrow">LIVE PREVIEW</p><div class="avatar-stage large"><div class="avatar" id="mainAvatar"><div class="avatar-hair"></div><div class="avatar-face"><i></i><i></i><b></b></div><div class="avatar-neck"></div><div class="avatar-body"></div><div class="avatar-accessory"></div></div></div><label class="field-label">Character name<input id="nameInput" maxlength="18" value="CARDOSA"></label></article>
+          <article class="panel customization">
+            <h3>Build your look</h3>
+            <label class="field-label">Hairstyle<select id="hairSelect"><option value="spike">Spiked</option><option value="fringe">Fringe</option><option value="long">Long</option><option value="buzz">Buzz cut</option></select></label>
+            <label class="field-label">Hair color<select id="hairColor"><option value="#161b2c">Midnight</option><option value="#6b3d24">Brown</option><option value="#d7d9e4">Silver</option><option value="#315edb">Blue</option><option value="#8d2d3f">Crimson</option></select></label>
+            <label class="field-label">Outfit color<select id="outfitColor"><option value="#243e78">Royal blue</option><option value="#242936">Shadow black</option><option value="#7c2638">Crimson</option><option value="#28745f">Emerald</option><option value="#dddde5">Silver</option></select></label>
+            <label class="field-label">Accessory<select id="accessorySelect"><option value="none">None</option><option value="headband">Headband</option><option value="glow">Energy aura</option><option value="scarf">Scarf</option></select></label>
+            <p class="muted small">Changes appear instantly and are saved automatically in this browser.</p>
+            <button class="primary-button" id="saveLook">Save appearance</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="quests">
+        <div class="section-heading"><div><p class="eyebrow">TAKE ACTION</p><h2>Daily quest board</h2></div><button class="secondary-button" id="refreshQuests">New daily quests ↻</button></div>
+        <p class="muted">Complete a quest in real life, then claim its reward. Daily quests refresh by date; completed rewards stay recorded.</p>
+        <div class="quest-list" id="questList"></div>
+      </section>
+
+      <section class="view" id="stats">
+        <div class="section-heading"><div><p class="eyebrow">PLAYER DEVELOPMENT</p><h2>Attributes</h2></div><span class="rank-chip"><span id="availablePoints">0</span> POINTS</span></div>
+        <div class="panel attribute-panel"><p class="muted">Earn one attribute point each time you level up. Spend points to improve your player profile.</p><div id="attributeList"></div></div>
+      </section>
+
+      <section class="view" id="shop">
+        <div class="section-heading"><div><p class="eyebrow">REWARDS</p><h2>Item shop</h2></div><span class="rank-chip">✧ <span id="shopCoins">0</span> COINS</span></div>
+        <div class="shop-grid" id="shopGrid"></div>
+      </section>
+
+      <footer><span>LEVELING UP // BUILD 001</span><button id="resetGame" class="text-button danger">Reset game data</button></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="game.js"></script>
+</body>
+</html>
