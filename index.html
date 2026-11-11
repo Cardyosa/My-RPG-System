@@ -39,50 +39,90 @@
           <article class="panel character-card">
             <div class="card-heading"><h3>Current character</h3><button class="text-button" data-goto="character">Customize ↗</button></div>
             <div class="avatar-stage"><div class="avatar" id="dashAvatar">
-  <svg class="avatar-art" viewBox="0 0 280 420" role="img" aria-label="Customizable anime hunter character">
-    <defs>
-      <linearGradient id="skinGrad-dashAvatar" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f5c9a7"/><stop offset=".55" stop-color="#d99d79"/><stop offset="1" stop-color="#a96858"/></linearGradient>
-      <linearGradient id="coatGrad-dashAvatar" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="color-mix(in srgb, var(--outfit) 72%, white)"/><stop offset=".45" stop-color="var(--outfit)"/><stop offset="1" stop-color="color-mix(in srgb, var(--outfit) 55%, black)"/></linearGradient>
-      <linearGradient id="hairGrad-dashAvatar" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="color-mix(in srgb, var(--hair) 65%, white)"/><stop offset=".45" stop-color="var(--hair)"/><stop offset="1" stop-color="color-mix(in srgb, var(--hair) 65%, black)"/></linearGradient>
-      <linearGradient id="metalGrad-dashAvatar" x1="0" x2="1"><stop stop-color="#a9c8e8"/><stop offset=".5" stop-color="#405d83"/><stop offset="1" stop-color="#d5e8ff"/></linearGradient>
-      <filter id="softGlow-dashAvatar"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    </defs>
-    <!-- energy silhouette -->
-    <path class="aura-ring" d="M140 35 C42 52 24 175 48 294 C67 374 100 396 140 402 C180 396 213 374 232 294 C256 175 238 52 140 35Z" fill="none" stroke="#69cfff" stroke-opacity=".25" stroke-width="3" stroke-dasharray="8 12" filter="url(#softGlow-dashAvatar)"/>
-    <!-- rear hair and neck -->
-    <path d="M81 72 Q66 102 76 156 L87 193 L193 193 L204 150 Q216 95 191 63Z" fill="url(#hairGrad-dashAvatar)"/>
-    <path d="M112 158 L109 211 Q140 235 171 211 L167 154Z" fill="url(#skinGrad-dashAvatar)"/>
-    <!-- torso / jacket -->
-    <path d="M107 202 L77 213 Q52 224 43 265 L25 385 Q83 408 140 408 Q197 408 255 385 L237 265 Q228 224 203 213 L173 202 L140 231Z" fill="url(#coatGrad-dashAvatar)" stroke="#8eb9e5" stroke-opacity=".45" stroke-width="3"/>
-    <path d="M108 207 L140 241 L172 207 L190 225 L163 278 L140 259 L117 278 L90 225Z" fill="#101a2b" stroke="#9fc9ee" stroke-opacity=".6" stroke-width="2"/>
-    <path d="M140 244 L153 273 L140 345 L127 273Z" fill="#1a2b43" stroke="#86b7e8" stroke-opacity=".55" stroke-width="2"/>
-    <path d="M127 273 L140 291 L153 273" fill="none" stroke="#b8d8f4" stroke-opacity=".8" stroke-width="3"/>
-    <path d="M54 254 L93 237 L105 271 L76 344 L42 340Z M226 254 L187 237 L175 271 L204 344 L238 340Z" fill="#101a2a" stroke="#7295ba" stroke-width="3"/>
-    <path d="M57 261 L83 251 L70 315 L49 319Z M223 261 L197 251 L210 315 L231 319Z" fill="url(#metalGrad-dashAvatar)" opacity=".8"/>
-    <path d="M88 341 L192 341 L202 390 Q140 408 78 390Z" fill="#0b1423" stroke="#6d91b8" stroke-width="3"/>
-    <path d="M125 348 L155 348 L160 379 L120 379Z" fill="#263e5e" stroke="#a5c9ed" stroke-width="2"/>
-    <path d="M140 352 L148 363 L140 374 L132 363Z" fill="#6be2ef" filter="url(#softGlow-dashAvatar)"/>
-    <!-- arms and gloves -->
-    <path d="M43 273 Q29 311 31 356 L49 371 Q65 350 72 315 L79 281Z M237 273 Q251 311 249 356 L231 371 Q215 350 208 315 L201 281Z" fill="url(#coatGrad-dashAvatar)" stroke="#8eb9e5" stroke-width="3"/>
-    <path d="M31 352 Q39 344 53 357 L57 382 Q43 396 27 382Z M249 352 Q241 344 227 357 L223 382 Q237 396 253 382Z" fill="#111b2b" stroke="#8eb9e5" stroke-width="2"/>
-    <!-- face -->
-    <path d="M83 82 Q84 47 140 45 Q196 47 197 82 L188 144 Q181 184 140 193 Q99 184 92 144Z" fill="url(#skinGrad-dashAvatar)" stroke="#754d4c" stroke-opacity=".35" stroke-width="2"/>
-    <path d="M91 114 Q107 99 126 112 Q112 129 94 124Z M154 112 Q173 99 189 114 L186 124 Q168 129 154 112Z" fill="#f4eee8"/>
-    <path d="M99 115 Q112 106 124 116 L121 122 Q109 126 99 119Z M158 116 Q171 106 182 115 L181 119 Q169 126 158 122Z" fill="#182338"/>
-    <path d="M100 108 L126 108 M155 108 L182 108" stroke="#251c27" stroke-width="5" stroke-linecap="round"/>
-    <path d="M140 120 L133 149 L143 152" fill="none" stroke="#9d655c" stroke-width="3" stroke-linecap="round"/>
-    <path d="M126 166 Q140 173 154 166" fill="none" stroke="#874b4d" stroke-width="3" stroke-linecap="round"/>
-    <path d="M95 139 Q100 164 115 174 M185 139 Q180 164 165 174" fill="none" stroke="#f8d8bd" stroke-opacity=".55" stroke-width="3"/>
-    <!-- front hair styles -->
-    <g class="hair-style hair-spike" fill="url(#hairGrad-dashAvatar)" stroke="#080e1b" stroke-opacity=".45" stroke-width="2"><path d="M78 112 Q65 76 87 49 L81 24 L111 43 L119 10 L139 43 L160 12 L166 47 L201 25 L193 65 Q211 83 198 119 L184 102 L175 129 L158 101 L143 130 L127 99 L108 127 L99 101Z"/><path d="M82 78 Q110 47 139 59 Q169 43 197 76" fill="none" stroke="#a9c4e5" stroke-opacity=".25" stroke-width="5"/></g>
-    <g class="hair-style hair-fringe" fill="url(#hairGrad-dashAvatar)" stroke="#080e1b" stroke-opacity=".45" stroke-width="2"><path d="M78 111 Q66 62 105 43 Q147 20 181 43 Q211 63 198 115 L185 106 L174 139 L157 105 L143 137 L128 103 L111 136 L101 105Z"/><path d="M87 67 Q126 35 188 62" fill="none" stroke="#a9c4e5" stroke-opacity=".25" stroke-width="5"/></g>
-    <g class="hair-style hair-long" fill="url(#hairGrad-dashAvatar)" stroke="#080e1b" stroke-opacity=".45" stroke-width="2"><path d="M77 112 Q62 57 104 39 Q147 17 181 42 Q212 64 198 120 L205 244 L180 216 L176 132 L157 108 L143 137 L126 104 L109 134 L96 103Z"/><path d="M87 67 Q126 35 188 62" fill="none" stroke="#a9c4e5" stroke-opacity=".25" stroke-width="5"/></g>
-    <g class="hair-style hair-buzz" fill="url(#hairGrad-dashAvatar)" stroke="#080e1b" stroke-opacity=".45" stroke-width="2"><path d="M82 94 Q76 47 116 37 Q156 25 187 49 Q203 67 197 96 Q172 74 140 77 Q108 74 82 94Z"/></g>
-    <!-- accessory overlays -->
-    <path class="headband" d="M83 91 Q140 72 197 91 L195 103 Q140 85 85 103Z" fill="#c5a45a" stroke="#f2d58c" stroke-width="2"/>
-    <path class="scarf" d="M91 202 Q140 222 189 202 L180 232 Q140 247 100 232Z" fill="#a83252" stroke="#f2a1b2" stroke-width="2"/>
-    <path d="M106 221 L90 270 M174 221 L190 270" stroke="#9bc8f0" stroke-opacity=".45" stroke-width="3"/>
-  </svg>
+<svg class="avatar-art" viewBox="0 0 320 500" role="img" aria-label="Customizable anime shadow hunter character">
+  <defs>
+    <linearGradient id="skinGrad-dashAvatar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0c5"/><stop offset=".48" stop-color="#d99b7d"/><stop offset="1" stop-color="#945b58"/></linearGradient>
+    <linearGradient id="coatGrad-dashAvatar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="color-mix(in srgb,var(--outfit) 55%,#fff)"/><stop offset=".42" stop-color="var(--outfit)"/><stop offset="1" stop-color="color-mix(in srgb,var(--outfit) 45%,#050a17)"/></linearGradient>
+    <linearGradient id="hairGrad-dashAvatar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="color-mix(in srgb,var(--hair) 48%,#fff)"/><stop offset=".42" stop-color="var(--hair)"/><stop offset="1" stop-color="color-mix(in srgb,var(--hair) 55%,#020611)"/></linearGradient>
+    <linearGradient id="steel-dashAvatar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e4f4ff"/><stop offset=".25" stop-color="#7299c7"/><stop offset=".55" stop-color="#263e65"/><stop offset="1" stop-color="#a8d5f7"/></linearGradient>
+    <linearGradient id="eye-dashAvatar" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d9ffff"/><stop offset=".35" stop-color="#43d8ff"/><stop offset="1" stop-color="#1474df"/></linearGradient>
+    <radialGradient id="aura-dashAvatar"><stop stop-color="#57dfff" stop-opacity=".34"/><stop offset="1" stop-color="#397fff" stop-opacity="0"/></radialGradient>
+    <filter id="glow-dashAvatar" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadow-dashAvatar" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <!-- aura and ground -->
+  <ellipse cx="160" cy="465" rx="95" ry="13" fill="#020611" opacity=".8" filter="url(#shadow-dashAvatar)"/>
+  <ellipse cx="160" cy="250" rx="137" ry="194" fill="url(#aura-dashAvatar)"/>
+  <path class="aura-ring" d="M160 34 C63 50 30 164 48 306 C60 400 103 453 160 464 C217 453 260 400 272 306 C290 164 257 50 160 34Z" fill="none" stroke="#62dfff" stroke-width="2.5" stroke-dasharray="7 13" opacity=".45" filter="url(#glow-dashAvatar)"/>
+  <path d="M47 322 Q20 269 54 211 M273 322 Q300 269 266 211" fill="none" stroke="#6bdfff" stroke-width="3" opacity=".5" filter="url(#glow-dashAvatar)"/>
+  <path d="M63 110 L43 82 M256 130 L280 99 M56 375 L34 397 M263 371 L287 393" stroke="#7deaff" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+  <!-- rear hair -->
+  <path d="M91 102 Q67 133 80 205 L65 307 Q94 291 108 250 L213 250 Q232 291 255 307 L238 191 Q255 111 215 77Z" fill="url(#hairGrad-dashAvatar)" stroke="#080e1b" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M94 127 Q84 190 100 263 M225 119 Q238 192 220 260" fill="none" stroke="#e5f2ff" stroke-opacity=".2" stroke-width="5"/>
+  <!-- neck -->
+  <path d="M130 177 L125 220 Q160 250 195 220 L190 174Z" fill="url(#skinGrad-dashAvatar)" stroke="#754c4b" stroke-width="2"/>
+  <!-- torso under suit -->
+  <path d="M111 211 L83 225 Q59 238 49 283 L30 433 Q93 466 160 466 Q227 466 290 433 L271 283 Q261 238 237 225 L209 211 L160 248Z" fill="url(#coatGrad-dashAvatar)" stroke="#9cccf2" stroke-width="3.5"/>
+  <path d="M111 215 L160 265 L209 215 L232 245 L194 322 L160 291 L126 322 L88 245Z" fill="#0b1425" stroke="#9dcdf0" stroke-width="3"/>
+  <path d="M160 263 L183 306 L160 414 L137 306Z" fill="#162b49" stroke="#76b7e8" stroke-width="2.5"/>
+  <path d="M137 306 L160 331 L183 306" fill="none" stroke="#d5efff" stroke-width="3"/>
+  <path d="M151 333 L160 350 L169 333 L178 389 L160 407 L142 389Z" fill="#243e65" stroke="#7ec6ee" stroke-width="2"/>
+  <path d="M160 350 L168 368 L160 384 L152 368Z" fill="#70efff" filter="url(#glow-dashAvatar)"/>
+  <!-- waist belt and coat panels -->
+  <path d="M77 372 Q160 391 243 372 L254 433 Q160 477 66 433Z" fill="#080f1d" stroke="#759bc7" stroke-width="3"/>
+  <path d="M84 389 Q160 407 236 389 L228 433 Q160 457 92 433Z" fill="#172d4b" stroke="#45688f" stroke-width="2"/>
+  <path d="M124 397 L196 397 L190 445 L130 445Z" fill="url(#steel-dashAvatar)" stroke="#d5eeff" stroke-width="2"/>
+  <path d="M160 405 L173 421 L160 438 L147 421Z" fill="#62eaff" stroke="#d9ffff" stroke-width="2" filter="url(#glow-dashAvatar)"/>
+  <path d="M90 300 L72 433 L104 449 L125 331 M230 300 L248 433 L216 449 L195 331" fill="none" stroke="#9ac7ec" stroke-opacity=".65" stroke-width="4"/>
+  <!-- shoulders and armor -->
+  <path d="M87 234 Q54 231 42 263 L30 319 L82 336 L111 278Z" fill="url(#steel-dashAvatar)" stroke="#d3edff" stroke-width="3"/>
+  <path d="M233 234 Q266 231 278 263 L290 319 L238 336 L209 278Z" fill="url(#steel-dashAvatar)" stroke="#d3edff" stroke-width="3"/>
+  <path d="M49 270 L82 258 L93 282 L74 316 L42 307Z M271 270 L238 258 L227 282 L246 316 L278 307Z" fill="#233d62" stroke="#82bce8" stroke-width="2"/>
+  <path d="M58 274 L80 266 M262 274 L240 266" stroke="#e2f7ff" stroke-width="3" opacity=".8"/>
+  <!-- arms and gauntlets -->
+  <path d="M43 296 Q26 330 35 388 L56 411 Q79 374 82 325 L74 300Z M277 296 Q294 330 285 388 L264 411 Q241 374 238 325 L246 300Z" fill="url(#coatGrad-dashAvatar)" stroke="#9bcaf0" stroke-width="3"/>
+  <path d="M35 369 L70 378 L63 424 L42 427 L28 405Z M285 369 L250 378 L257 424 L278 427 L292 405Z" fill="url(#steel-dashAvatar)" stroke="#d4efff" stroke-width="2.5"/>
+  <path d="M42 388 L62 394 M278 388 L258 394" stroke="#243e65" stroke-width="4"/>
+  <!-- face silhouette -->
+  <path d="M99 95 Q100 55 160 52 Q220 55 221 95 L210 166 Q201 211 160 224 Q119 211 110 166Z" fill="url(#skinGrad-dashAvatar)" stroke="#704b4b" stroke-width="2.5"/>
+  <path d="M112 151 Q117 191 145 205 M208 151 Q203 191 175 205" fill="none" stroke="#ffe1c9" stroke-opacity=".35" stroke-width="4"/>
+  <!-- eyes: sharp anime shape -->
+  <path d="M111 137 Q130 119 151 136 Q139 158 115 151Z M169 136 Q190 119 209 137 L205 151 Q181 158 169 136Z" fill="#f4f7ff"/>
+  <path d="M118 137 Q133 126 147 138 L143 150 Q129 155 118 145Z M173 138 Q187 126 202 137 L202 145 Q190 155 177 150Z" fill="url(#eye-dashAvatar)"/>
+  <ellipse cx="134" cy="140" rx="5" ry="9" fill="#081326"/><ellipse cx="188" cy="140" rx="5" ry="9" fill="#081326"/>
+  <circle cx="137" cy="135" r="3.2" fill="#fff"/><circle cx="191" cy="135" r="3.2" fill="#fff"/>
+  <path d="M108 134 Q130 116 153 131 M167 131 Q190 116 212 134" fill="none" stroke="#172035" stroke-width="7" stroke-linecap="round"/>
+  <path d="M112 126 L143 120 M177 120 L208 126" stroke="#f2d2bd" stroke-opacity=".45" stroke-width="2"/>
+  <!-- nose, mouth, face accents -->
+  <path d="M160 145 L153 174 L164 177" fill="none" stroke="#9c625c" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M146 194 Q160 201 174 194" fill="none" stroke="#743e47" stroke-width="3" stroke-linecap="round"/>
+  <path d="M116 168 L124 178 M204 168 L196 178" stroke="#f7c4a8" stroke-width="3" opacity=".6"/>
+  <!-- front hair styles -->
+  <g class="hair-style hair-spike" fill="url(#hairGrad-dashAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
+    <path d="M91 133 Q75 105 88 72 L75 36 L112 60 L121 13 L151 55 L170 8 L185 57 L229 29 L218 76 Q246 104 225 139 L207 126 L195 163 L176 132 L160 169 L144 132 L124 164 L112 128 L98 151Z"/>
+    <path d="M91 89 Q126 49 160 66 Q198 46 225 87" fill="none" stroke="#e6f4ff" stroke-opacity=".24" stroke-width="7"/>
+    <path d="M118 59 L130 111 M171 53 L169 110 M214 70 L194 117" fill="none" stroke="#f2fbff" stroke-opacity=".22" stroke-width="4"/>
+  </g>
+  <g class="hair-style hair-fringe" fill="url(#hairGrad-dashAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
+    <path d="M91 135 Q70 91 99 61 Q130 27 174 43 Q225 49 233 95 Q239 120 224 142 L208 127 L195 166 L176 131 L159 170 L142 132 L123 165 L111 130 L97 153Z"/>
+    <path d="M96 83 Q144 35 218 79" fill="none" stroke="#f1f8ff" stroke-opacity=".25" stroke-width="7"/>
+    <path d="M128 54 Q140 91 137 137 M171 48 Q181 87 168 137" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="4"/>
+  </g>
+  <g class="hair-style hair-long" fill="url(#hairGrad-dashAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
+    <path d="M91 135 Q70 91 99 61 Q130 27 174 43 Q225 49 233 95 Q239 120 224 142 L240 313 L210 280 L207 132 L195 166 L176 131 L159 170 L142 132 L123 165 L111 130 L97 153Z"/>
+    <path d="M96 83 Q144 35 218 79" fill="none" stroke="#f1f8ff" stroke-opacity=".25" stroke-width="7"/>
+  </g>
+  <g class="hair-style hair-buzz" fill="url(#hairGrad-dashAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
+    <path d="M95 119 Q83 65 125 47 Q176 24 213 59 Q232 78 222 125 Q194 94 160 96 Q123 92 95 119Z"/>
+    <path d="M107 71 Q157 42 208 74" fill="none" stroke="#f4fbff" stroke-opacity=".25" stroke-width="6"/>
+  </g>
+  <!-- optional cosmetics/accessories -->
+  <path class="headband" d="M98 105 Q160 82 222 105 L218 121 Q160 101 102 121Z" fill="#c6a65e" stroke="#fff0bd" stroke-width="3"/>
+  <path class="scarf" d="M111 218 Q160 239 209 218 L198 251 Q160 270 122 251Z" fill="#a72f51" stroke="#ffc0d0" stroke-width="2.5"/>
+  <path d="M122 245 L101 312 M198 245 L219 312" stroke="#c0e4ff" stroke-width="4" opacity=".5"/>
+  <!-- small light glints -->
+  <path d="M72 198 L79 183 L86 198 L79 213Z M248 198 L255 183 L262 198 L255 213Z" fill="#9ff5ff" opacity=".7" filter="url(#glow-dashAvatar)"/>
+</svg>
 </div></div>
             <div class="character-name"><b id="displayName">CARDoSA</b><span id="equippedLabel">Starter outfit</span></div>
           </article>
@@ -109,50 +149,90 @@
         <div class="section-heading"><div><p class="eyebrow">APPEARANCE</p><h2>Character customization</h2></div></div>
         <div class="custom-grid">
           <article class="panel preview-panel"><p class="eyebrow">LIVE PREVIEW</p><div class="avatar-stage large"><div class="avatar" id="mainAvatar">
-  <svg class="avatar-art" viewBox="0 0 280 420" role="img" aria-label="Customizable anime hunter character">
-    <defs>
-      <linearGradient id="skinGrad-mainAvatar" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f5c9a7"/><stop offset=".55" stop-color="#d99d79"/><stop offset="1" stop-color="#a96858"/></linearGradient>
-      <linearGradient id="coatGrad-mainAvatar" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="color-mix(in srgb, var(--outfit) 72%, white)"/><stop offset=".45" stop-color="var(--outfit)"/><stop offset="1" stop-color="color-mix(in srgb, var(--outfit) 55%, black)"/></linearGradient>
-      <linearGradient id="hairGrad-mainAvatar" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="color-mix(in srgb, var(--hair) 65%, white)"/><stop offset=".45" stop-color="var(--hair)"/><stop offset="1" stop-color="color-mix(in srgb, var(--hair) 65%, black)"/></linearGradient>
-      <linearGradient id="metalGrad-mainAvatar" x1="0" x2="1"><stop stop-color="#a9c8e8"/><stop offset=".5" stop-color="#405d83"/><stop offset="1" stop-color="#d5e8ff"/></linearGradient>
-      <filter id="softGlow-mainAvatar"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    </defs>
-    <!-- energy silhouette -->
-    <path class="aura-ring" d="M140 35 C42 52 24 175 48 294 C67 374 100 396 140 402 C180 396 213 374 232 294 C256 175 238 52 140 35Z" fill="none" stroke="#69cfff" stroke-opacity=".25" stroke-width="3" stroke-dasharray="8 12" filter="url(#softGlow-mainAvatar)"/>
-    <!-- rear hair and neck -->
-    <path d="M81 72 Q66 102 76 156 L87 193 L193 193 L204 150 Q216 95 191 63Z" fill="url(#hairGrad-mainAvatar)"/>
-    <path d="M112 158 L109 211 Q140 235 171 211 L167 154Z" fill="url(#skinGrad-mainAvatar)"/>
-    <!-- torso / jacket -->
-    <path d="M107 202 L77 213 Q52 224 43 265 L25 385 Q83 408 140 408 Q197 408 255 385 L237 265 Q228 224 203 213 L173 202 L140 231Z" fill="url(#coatGrad-mainAvatar)" stroke="#8eb9e5" stroke-opacity=".45" stroke-width="3"/>
-    <path d="M108 207 L140 241 L172 207 L190 225 L163 278 L140 259 L117 278 L90 225Z" fill="#101a2b" stroke="#9fc9ee" stroke-opacity=".6" stroke-width="2"/>
-    <path d="M140 244 L153 273 L140 345 L127 273Z" fill="#1a2b43" stroke="#86b7e8" stroke-opacity=".55" stroke-width="2"/>
-    <path d="M127 273 L140 291 L153 273" fill="none" stroke="#b8d8f4" stroke-opacity=".8" stroke-width="3"/>
-    <path d="M54 254 L93 237 L105 271 L76 344 L42 340Z M226 254 L187 237 L175 271 L204 344 L238 340Z" fill="#101a2a" stroke="#7295ba" stroke-width="3"/>
-    <path d="M57 261 L83 251 L70 315 L49 319Z M223 261 L197 251 L210 315 L231 319Z" fill="url(#metalGrad-mainAvatar)" opacity=".8"/>
-    <path d="M88 341 L192 341 L202 390 Q140 408 78 390Z" fill="#0b1423" stroke="#6d91b8" stroke-width="3"/>
-    <path d="M125 348 L155 348 L160 379 L120 379Z" fill="#263e5e" stroke="#a5c9ed" stroke-width="2"/>
-    <path d="M140 352 L148 363 L140 374 L132 363Z" fill="#6be2ef" filter="url(#softGlow-mainAvatar)"/>
-    <!-- arms and gloves -->
-    <path d="M43 273 Q29 311 31 356 L49 371 Q65 350 72 315 L79 281Z M237 273 Q251 311 249 356 L231 371 Q215 350 208 315 L201 281Z" fill="url(#coatGrad-mainAvatar)" stroke="#8eb9e5" stroke-width="3"/>
-    <path d="M31 352 Q39 344 53 357 L57 382 Q43 396 27 382Z M249 352 Q241 344 227 357 L223 382 Q237 396 253 382Z" fill="#111b2b" stroke="#8eb9e5" stroke-width="2"/>
-    <!-- face -->
-    <path d="M83 82 Q84 47 140 45 Q196 47 197 82 L188 144 Q181 184 140 193 Q99 184 92 144Z" fill="url(#skinGrad-mainAvatar)" stroke="#754d4c" stroke-opacity=".35" stroke-width="2"/>
-    <path d="M91 114 Q107 99 126 112 Q112 129 94 124Z M154 112 Q173 99 189 114 L186 124 Q168 129 154 112Z" fill="#f4eee8"/>
-    <path d="M99 115 Q112 106 124 116 L121 122 Q109 126 99 119Z M158 116 Q171 106 182 115 L181 119 Q169 126 158 122Z" fill="#182338"/>
-    <path d="M100 108 L126 108 M155 108 L182 108" stroke="#251c27" stroke-width="5" stroke-linecap="round"/>
-    <path d="M140 120 L133 149 L143 152" fill="none" stroke="#9d655c" stroke-width="3" stroke-linecap="round"/>
-    <path d="M126 166 Q140 173 154 166" fill="none" stroke="#874b4d" stroke-width="3" stroke-linecap="round"/>
-    <path d="M95 139 Q100 164 115 174 M185 139 Q180 164 165 174" fill="none" stroke="#f8d8bd" stroke-opacity=".55" stroke-width="3"/>
-    <!-- front hair styles -->
-    <g class="hair-style hair-spike" fill="url(#hairGrad-mainAvatar)" stroke="#080e1b" stroke-opacity=".45" stroke-width="2"><path d="M78 112 Q65 76 87 49 L81 24 L111 43 L119 10 L139 43 L160 12 L166 47 L201 25 L193 65 Q211 83 198 119 L184 102 L175 129 L158 101 L143 130 L127 99 L108 127 L99 101Z"/><path d="M82 78 Q110 47 139 59 Q169 43 197 76" fill="none" stroke="#a9c4e5" stroke-opacity=".25" stroke-width="5"/></g>
-    <g class="hair-style hair-fringe" fill="url(#hairGrad-mainAvatar)" stroke="#080e1b" stroke-opacity=".45" stroke-width="2"><path d="M78 111 Q66 62 105 43 Q147 20 181 43 Q211 63 198 115 L185 106 L174 139 L157 105 L143 137 L128 103 L111 136 L101 105Z"/><path d="M87 67 Q126 35 188 62" fill="none" stroke="#a9c4e5" stroke-opacity=".25" stroke-width="5"/></g>
-    <g class="hair-style hair-long" fill="url(#hairGrad-mainAvatar)" stroke="#080e1b" stroke-opacity=".45" stroke-width="2"><path d="M77 112 Q62 57 104 39 Q147 17 181 42 Q212 64 198 120 L205 244 L180 216 L176 132 L157 108 L143 137 L126 104 L109 134 L96 103Z"/><path d="M87 67 Q126 35 188 62" fill="none" stroke="#a9c4e5" stroke-opacity=".25" stroke-width="5"/></g>
-    <g class="hair-style hair-buzz" fill="url(#hairGrad-mainAvatar)" stroke="#080e1b" stroke-opacity=".45" stroke-width="2"><path d="M82 94 Q76 47 116 37 Q156 25 187 49 Q203 67 197 96 Q172 74 140 77 Q108 74 82 94Z"/></g>
-    <!-- accessory overlays -->
-    <path class="headband" d="M83 91 Q140 72 197 91 L195 103 Q140 85 85 103Z" fill="#c5a45a" stroke="#f2d58c" stroke-width="2"/>
-    <path class="scarf" d="M91 202 Q140 222 189 202 L180 232 Q140 247 100 232Z" fill="#a83252" stroke="#f2a1b2" stroke-width="2"/>
-    <path d="M106 221 L90 270 M174 221 L190 270" stroke="#9bc8f0" stroke-opacity=".45" stroke-width="3"/>
-  </svg>
+<svg class="avatar-art" viewBox="0 0 320 500" role="img" aria-label="Customizable anime shadow hunter character">
+  <defs>
+    <linearGradient id="skinGrad-mainAvatar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0c5"/><stop offset=".48" stop-color="#d99b7d"/><stop offset="1" stop-color="#945b58"/></linearGradient>
+    <linearGradient id="coatGrad-mainAvatar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="color-mix(in srgb,var(--outfit) 55%,#fff)"/><stop offset=".42" stop-color="var(--outfit)"/><stop offset="1" stop-color="color-mix(in srgb,var(--outfit) 45%,#050a17)"/></linearGradient>
+    <linearGradient id="hairGrad-mainAvatar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="color-mix(in srgb,var(--hair) 48%,#fff)"/><stop offset=".42" stop-color="var(--hair)"/><stop offset="1" stop-color="color-mix(in srgb,var(--hair) 55%,#020611)"/></linearGradient>
+    <linearGradient id="steel-mainAvatar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e4f4ff"/><stop offset=".25" stop-color="#7299c7"/><stop offset=".55" stop-color="#263e65"/><stop offset="1" stop-color="#a8d5f7"/></linearGradient>
+    <linearGradient id="eye-mainAvatar" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d9ffff"/><stop offset=".35" stop-color="#43d8ff"/><stop offset="1" stop-color="#1474df"/></linearGradient>
+    <radialGradient id="aura-mainAvatar"><stop stop-color="#57dfff" stop-opacity=".34"/><stop offset="1" stop-color="#397fff" stop-opacity="0"/></radialGradient>
+    <filter id="glow-mainAvatar" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadow-mainAvatar" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+  <!-- aura and ground -->
+  <ellipse cx="160" cy="465" rx="95" ry="13" fill="#020611" opacity=".8" filter="url(#shadow-mainAvatar)"/>
+  <ellipse cx="160" cy="250" rx="137" ry="194" fill="url(#aura-mainAvatar)"/>
+  <path class="aura-ring" d="M160 34 C63 50 30 164 48 306 C60 400 103 453 160 464 C217 453 260 400 272 306 C290 164 257 50 160 34Z" fill="none" stroke="#62dfff" stroke-width="2.5" stroke-dasharray="7 13" opacity=".45" filter="url(#glow-mainAvatar)"/>
+  <path d="M47 322 Q20 269 54 211 M273 322 Q300 269 266 211" fill="none" stroke="#6bdfff" stroke-width="3" opacity=".5" filter="url(#glow-mainAvatar)"/>
+  <path d="M63 110 L43 82 M256 130 L280 99 M56 375 L34 397 M263 371 L287 393" stroke="#7deaff" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+  <!-- rear hair -->
+  <path d="M91 102 Q67 133 80 205 L65 307 Q94 291 108 250 L213 250 Q232 291 255 307 L238 191 Q255 111 215 77Z" fill="url(#hairGrad-mainAvatar)" stroke="#080e1b" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M94 127 Q84 190 100 263 M225 119 Q238 192 220 260" fill="none" stroke="#e5f2ff" stroke-opacity=".2" stroke-width="5"/>
+  <!-- neck -->
+  <path d="M130 177 L125 220 Q160 250 195 220 L190 174Z" fill="url(#skinGrad-mainAvatar)" stroke="#754c4b" stroke-width="2"/>
+  <!-- torso under suit -->
+  <path d="M111 211 L83 225 Q59 238 49 283 L30 433 Q93 466 160 466 Q227 466 290 433 L271 283 Q261 238 237 225 L209 211 L160 248Z" fill="url(#coatGrad-mainAvatar)" stroke="#9cccf2" stroke-width="3.5"/>
+  <path d="M111 215 L160 265 L209 215 L232 245 L194 322 L160 291 L126 322 L88 245Z" fill="#0b1425" stroke="#9dcdf0" stroke-width="3"/>
+  <path d="M160 263 L183 306 L160 414 L137 306Z" fill="#162b49" stroke="#76b7e8" stroke-width="2.5"/>
+  <path d="M137 306 L160 331 L183 306" fill="none" stroke="#d5efff" stroke-width="3"/>
+  <path d="M151 333 L160 350 L169 333 L178 389 L160 407 L142 389Z" fill="#243e65" stroke="#7ec6ee" stroke-width="2"/>
+  <path d="M160 350 L168 368 L160 384 L152 368Z" fill="#70efff" filter="url(#glow-mainAvatar)"/>
+  <!-- waist belt and coat panels -->
+  <path d="M77 372 Q160 391 243 372 L254 433 Q160 477 66 433Z" fill="#080f1d" stroke="#759bc7" stroke-width="3"/>
+  <path d="M84 389 Q160 407 236 389 L228 433 Q160 457 92 433Z" fill="#172d4b" stroke="#45688f" stroke-width="2"/>
+  <path d="M124 397 L196 397 L190 445 L130 445Z" fill="url(#steel-mainAvatar)" stroke="#d5eeff" stroke-width="2"/>
+  <path d="M160 405 L173 421 L160 438 L147 421Z" fill="#62eaff" stroke="#d9ffff" stroke-width="2" filter="url(#glow-mainAvatar)"/>
+  <path d="M90 300 L72 433 L104 449 L125 331 M230 300 L248 433 L216 449 L195 331" fill="none" stroke="#9ac7ec" stroke-opacity=".65" stroke-width="4"/>
+  <!-- shoulders and armor -->
+  <path d="M87 234 Q54 231 42 263 L30 319 L82 336 L111 278Z" fill="url(#steel-mainAvatar)" stroke="#d3edff" stroke-width="3"/>
+  <path d="M233 234 Q266 231 278 263 L290 319 L238 336 L209 278Z" fill="url(#steel-mainAvatar)" stroke="#d3edff" stroke-width="3"/>
+  <path d="M49 270 L82 258 L93 282 L74 316 L42 307Z M271 270 L238 258 L227 282 L246 316 L278 307Z" fill="#233d62" stroke="#82bce8" stroke-width="2"/>
+  <path d="M58 274 L80 266 M262 274 L240 266" stroke="#e2f7ff" stroke-width="3" opacity=".8"/>
+  <!-- arms and gauntlets -->
+  <path d="M43 296 Q26 330 35 388 L56 411 Q79 374 82 325 L74 300Z M277 296 Q294 330 285 388 L264 411 Q241 374 238 325 L246 300Z" fill="url(#coatGrad-mainAvatar)" stroke="#9bcaf0" stroke-width="3"/>
+  <path d="M35 369 L70 378 L63 424 L42 427 L28 405Z M285 369 L250 378 L257 424 L278 427 L292 405Z" fill="url(#steel-mainAvatar)" stroke="#d4efff" stroke-width="2.5"/>
+  <path d="M42 388 L62 394 M278 388 L258 394" stroke="#243e65" stroke-width="4"/>
+  <!-- face silhouette -->
+  <path d="M99 95 Q100 55 160 52 Q220 55 221 95 L210 166 Q201 211 160 224 Q119 211 110 166Z" fill="url(#skinGrad-mainAvatar)" stroke="#704b4b" stroke-width="2.5"/>
+  <path d="M112 151 Q117 191 145 205 M208 151 Q203 191 175 205" fill="none" stroke="#ffe1c9" stroke-opacity=".35" stroke-width="4"/>
+  <!-- eyes: sharp anime shape -->
+  <path d="M111 137 Q130 119 151 136 Q139 158 115 151Z M169 136 Q190 119 209 137 L205 151 Q181 158 169 136Z" fill="#f4f7ff"/>
+  <path d="M118 137 Q133 126 147 138 L143 150 Q129 155 118 145Z M173 138 Q187 126 202 137 L202 145 Q190 155 177 150Z" fill="url(#eye-mainAvatar)"/>
+  <ellipse cx="134" cy="140" rx="5" ry="9" fill="#081326"/><ellipse cx="188" cy="140" rx="5" ry="9" fill="#081326"/>
+  <circle cx="137" cy="135" r="3.2" fill="#fff"/><circle cx="191" cy="135" r="3.2" fill="#fff"/>
+  <path d="M108 134 Q130 116 153 131 M167 131 Q190 116 212 134" fill="none" stroke="#172035" stroke-width="7" stroke-linecap="round"/>
+  <path d="M112 126 L143 120 M177 120 L208 126" stroke="#f2d2bd" stroke-opacity=".45" stroke-width="2"/>
+  <!-- nose, mouth, face accents -->
+  <path d="M160 145 L153 174 L164 177" fill="none" stroke="#9c625c" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M146 194 Q160 201 174 194" fill="none" stroke="#743e47" stroke-width="3" stroke-linecap="round"/>
+  <path d="M116 168 L124 178 M204 168 L196 178" stroke="#f7c4a8" stroke-width="3" opacity=".6"/>
+  <!-- front hair styles -->
+  <g class="hair-style hair-spike" fill="url(#hairGrad-mainAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
+    <path d="M91 133 Q75 105 88 72 L75 36 L112 60 L121 13 L151 55 L170 8 L185 57 L229 29 L218 76 Q246 104 225 139 L207 126 L195 163 L176 132 L160 169 L144 132 L124 164 L112 128 L98 151Z"/>
+    <path d="M91 89 Q126 49 160 66 Q198 46 225 87" fill="none" stroke="#e6f4ff" stroke-opacity=".24" stroke-width="7"/>
+    <path d="M118 59 L130 111 M171 53 L169 110 M214 70 L194 117" fill="none" stroke="#f2fbff" stroke-opacity=".22" stroke-width="4"/>
+  </g>
+  <g class="hair-style hair-fringe" fill="url(#hairGrad-mainAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
+    <path d="M91 135 Q70 91 99 61 Q130 27 174 43 Q225 49 233 95 Q239 120 224 142 L208 127 L195 166 L176 131 L159 170 L142 132 L123 165 L111 130 L97 153Z"/>
+    <path d="M96 83 Q144 35 218 79" fill="none" stroke="#f1f8ff" stroke-opacity=".25" stroke-width="7"/>
+    <path d="M128 54 Q140 91 137 137 M171 48 Q181 87 168 137" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="4"/>
+  </g>
+  <g class="hair-style hair-long" fill="url(#hairGrad-mainAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
+    <path d="M91 135 Q70 91 99 61 Q130 27 174 43 Q225 49 233 95 Q239 120 224 142 L240 313 L210 280 L207 132 L195 166 L176 131 L159 170 L142 132 L123 165 L111 130 L97 153Z"/>
+    <path d="M96 83 Q144 35 218 79" fill="none" stroke="#f1f8ff" stroke-opacity=".25" stroke-width="7"/>
+  </g>
+  <g class="hair-style hair-buzz" fill="url(#hairGrad-mainAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
+    <path d="M95 119 Q83 65 125 47 Q176 24 213 59 Q232 78 222 125 Q194 94 160 96 Q123 92 95 119Z"/>
+    <path d="M107 71 Q157 42 208 74" fill="none" stroke="#f4fbff" stroke-opacity=".25" stroke-width="6"/>
+  </g>
+  <!-- optional cosmetics/accessories -->
+  <path class="headband" d="M98 105 Q160 82 222 105 L218 121 Q160 101 102 121Z" fill="#c6a65e" stroke="#fff0bd" stroke-width="3"/>
+  <path class="scarf" d="M111 218 Q160 239 209 218 L198 251 Q160 270 122 251Z" fill="#a72f51" stroke="#ffc0d0" stroke-width="2.5"/>
+  <path d="M122 245 L101 312 M198 245 L219 312" stroke="#c0e4ff" stroke-width="4" opacity=".5"/>
+  <!-- small light glints -->
+  <path d="M72 198 L79 183 L86 198 L79 213Z M248 198 L255 183 L262 198 L255 213Z" fill="#9ff5ff" opacity=".7" filter="url(#glow-mainAvatar)"/>
+</svg>
 </div></div><label class="field-label">Character name<input id="nameInput" maxlength="18" value="CARDOSA"></label></article>
           <article class="panel customization">
             <h3>Build your look</h3>
