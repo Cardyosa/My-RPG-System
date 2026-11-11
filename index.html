@@ -10,8 +10,16 @@
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <div class="brand"><span class="brand-mark">✦</span><div><b>LEVELING UP</b><small>YOUR REAL-LIFE RPG</small></div></div>
-      <div class="top-stats"><span>◈ <b id="headerLevel">LVL 1</b></span><span>✧ <b id="headerCoins">0</b> COINS</span></div>
+      <div class="brand"><span class="brand-mark">✦</span><div><b>MY RPG</b><small>SYSTEM</small></div></div>
+      <nav class="tabs" aria-label="Main navigation">
+        <button class="tab" data-tab="dashboard">⌂ <span>Overview</span></button>
+        <button class="tab active" data-tab="character">♟ <span>Character</span></button>
+        <button class="tab" data-tab="quests">⚑ <span>Quests</span></button>
+        <button class="tab" data-tab="stats">▦ <span>Attributes</span></button>
+        <button class="tab" data-tab="shop">🛒 <span>Shop</span></button>
+      </nav>
+      <div class="hud-level"><b id="headerLevel">LVL 1</b><div class="hud-xp"><i id="headerXpFill"></i></div><small id="headerXpText">0 / 100 XP</small></div>
+      <div class="top-stats"><span class="coin-pill">💎 <b id="headerCoins">0</b></span><button class="settings-button" aria-label="Settings">⚙</button></div>
     </header>
     <main>
       <section class="hero panel">
@@ -38,7 +46,7 @@
         <div class="dashboard-grid">
           <article class="panel character-card">
             <div class="card-heading"><h3>Current character</h3><button class="text-button" data-goto="character">Customize ↗</button></div>
-            <div class="avatar-stage"><div class="avatar" id="dashAvatar" data-hair="spike" data-outfit="hunter" data-aura="blue"><img class="avatar-art" src="assets/hunter-form-1.webp" alt="Anime hunter character"></div></div>
+            <div class="avatar-stage"><div class="avatar" id="dashAvatar" data-hair="spike" data-outfit="hunter" data-aura="blue"><img class="avatar-art" src="hunter-form-1.webp" alt="Anime hunter character"></div></div>
             <div class="character-name"><b id="displayName">CARDoSA</b><span id="equippedLabel">Starter outfit</span></div>
           </article>
           <article class="panel">
@@ -66,20 +74,29 @@
     <span class="rank-chip" id="characterRank">E-RANK HUNTER</span>
   </div>
   <div class="anime-creator">
+    <aside class="rank-rail" aria-label="Hunter rank ladder">
+      <div class="rank-rail-title">RANK</div>
+      <div class="rank-card rank-e"><img src="hunter-form-1.webp" alt=""><b>E-Rank</b></div>
+      <div class="rank-card rank-d"><img src="hunter-form-1.webp" alt=""><b>D-Rank</b></div>
+      <div class="rank-card rank-c"><img src="hunter-form-2.webp" alt=""><b>C-Rank</b></div>
+      <div class="rank-card rank-b"><img src="hunter-form-2.webp" alt=""><b>B-Rank</b></div>
+      <div class="rank-card rank-a"><img src="hunter-form-3.webp" alt=""><b>A-Rank</b></div>
+      <div class="rank-card rank-s"><img src="hunter-form-3.webp" alt=""><b>S-Rank</b></div>
+      <div class="rank-card rank-ss"><img src="hunter-form-3.webp" alt=""><b>SS-Rank</b></div>
+      <div class="rank-card rank-sss"><img src="hunter-form-3.webp" alt=""><b>SSS-Rank</b></div>
+    </aside>
     <article class="anime-portrait panel">
       <div class="portrait-topline"><span class="eyebrow">LIVE CHARACTER PREVIEW</span><span class="form-tag" id="formTag">HUNTER FORM</span></div>
       <div class="portrait-scene" id="portraitScene">
         <div class="portrait-moon"></div><div class="portrait-aura aura-blue" id="portraitAura"></div>
         <div class="portrait-art-wrap">
-          <img id="mainAvatarArt" class="portrait-art" src="assets/hunter-form-1.webp" alt="Full-body anime hunter in dark armor">
+          <img id="mainAvatarArt" class="portrait-art" src="hunter-form-1.webp" alt="Full-body anime hunter in dark armor">
           <div class="portrait-vignette"></div>
         </div>
         <div class="portrait-caption"><span>CURRENT AWAKENING</span><strong id="portraitTitle">E-RANK HUNTER</strong></div>
       </div>
       <label class="field-label name-field">Hunter name<input id="nameInput" maxlength="18" value="CARDOSA"></label>
-      <div class="rank-progression" aria-label="Hunter rank progression">
-        <span class="rank-step current">E<small>RANK</small></span><i>›</i><span class="rank-step">D<small>RANK</small></span><i>›</i><span class="rank-step">C<small>RANK</small></span><i>›</i><span class="rank-step">B<small>RANK</small></span><i>›</i><span class="rank-step">A<small>RANK</small></span><i>›</i><span class="rank-step">S<small>RANK</small></span><i>›</i><span class="rank-step">SS<small>RANK</small></span><i>›</i><span class="rank-step">SSS<small>RANK</small></span>
-      </div>
+      <div class="rank-progression"><span>HUNTER AWAKENING</span><b id="rankChipInline">E-RANK</b></div>
     </article>
 
     <div class="creator-controls">
@@ -108,14 +125,21 @@
         <div class="asset-gallery">
           <h4>HAIRSTYLE COLLECTION</h4>
           <div class="asset-thumbs">
-            <button type="button" class="asset-thumb selected" data-hair-choice="spike"><img src="assets/hunter-form-1.webp" alt=""><span>Messy</span></button>
-            <button type="button" class="asset-thumb" data-hair-choice="sweep"><img src="assets/hunter-form-2.webp" alt=""><span>Silver sweep</span></button>
-            <button type="button" class="asset-thumb" data-hair-choice="long"><img src="assets/hunter-form-3.webp" alt=""><span>Long shadow</span></button>
+            <button type="button" class="asset-thumb selected" data-hair-choice="spike" aria-label="Messy spiky"><img src="hunter-form-1.webp" alt=""></button>
+            <button type="button" class="asset-thumb" data-hair-choice="sweep" aria-label="Silver sweep"><img src="hunter-form-2.webp" alt=""></button>
+            <button type="button" class="asset-thumb" data-hair-choice="long" aria-label="Long shadow"><img src="hunter-form-3.webp" alt=""></button>
+            <button type="button" class="asset-thumb" data-hair-choice="fringe" aria-label="Falling fringe"><img src="hunter-form-1.webp" alt=""></button>
+            <button type="button" class="asset-thumb" data-hair-choice="tied" aria-label="Tied back"><img src="hunter-form-2.webp" alt=""></button>
+            <button type="button" class="asset-thumb" data-hair-choice="buzz" aria-label="Buzz cut"><img src="hunter-form-3.webp" alt=""></button>
+            <button type="button" class="asset-thumb" data-hair-choice="spike" aria-label="Layered spike"><img src="hunter-form-1.webp" alt=""></button>
+            <button type="button" class="asset-thumb" data-hair-choice="sweep" aria-label="Wind swept"><img src="hunter-form-2.webp" alt=""></button>
+            <button type="button" class="asset-thumb" data-hair-choice="long" aria-label="Shadow fringe"><img src="hunter-form-3.webp" alt=""></button>
+            <button type="button" class="asset-thumb" data-hair-choice="fringe" aria-label="Silver fringe"><img src="hunter-form-1.webp" alt=""></button>
           </div>
         </div>
         <div class="asset-gallery">
           <h4>HAIR COLOR</h4>
-          <div class="color-swatches"><button data-color-choice="#161b2c" class="selected" aria-label="Black"></button><button data-color-choice="#d7d9e4" aria-label="Silver"></button><button data-color-choice="#6b3d24" aria-label="Brown"></button><button data-color-choice="#315edb" aria-label="Blue"></button><button data-color-choice="#7d35b8" aria-label="Violet"></button><button data-color-choice="#8d2d3f" aria-label="Crimson"></button></div>
+          <div class="color-swatches"><button data-color-choice="#161b2c" class="selected" aria-label="Black"></button><button data-color-choice="#d7d9e4" aria-label="Silver"></button><button data-color-choice="#6b3d24" aria-label="Brown"></button><button data-color-choice="#315edb" aria-label="Blue"></button><button data-color-choice="#7d35b8" aria-label="Violet"></button><button data-color-choice="#8d2d3f" aria-label="Crimson"></button><button data-color-choice="#164fca" aria-label="Azure"></button><button data-color-choice="#7020a5" aria-label="Purple"></button></div>
         </div>
         <div class="panel-title-row transformation-title"><div><p class="eyebrow">03 / AWAKENING</p><h3>Transformation aura</h3></div></div>
         <div class="aura-options" id="auraOptions">

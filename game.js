@@ -17,7 +17,7 @@ const questPool=[
 const defaultState={name:"CARDOSA",level:1,xp:0,totalXp:0,coins:0,earnedCoins:0,points:0,completed:0,streak:0,lastCompletedDate:"",stats:{Strength:5,Discipline:5,Confidence:5,Intelligence:5,Health:5,Wealth:5},look:{hair:"spike",hairColor:"#161b2c",outfitColor:"#243e78",accessory:"none",outfit:"hunter",aura:"blue",eyes:"blue",skin:"medium",weapon:"katana"},owned:[],equipped:"Starter outfit",questDate:"",quests:[]};
 let state;try{state={...defaultState,...JSON.parse(localStorage.getItem("levelingUpSave")||"{}")};state.stats={...defaultState.stats,...(state.stats||{})};state.look={...defaultState.look,...(state.look||{})};}catch(e){state={...defaultState};}
 function save(){localStorage.setItem("levelingUpSave",JSON.stringify(state));render();}
-function rank(){return state.level>=50?"S-RANK":state.level>=35?"A-RANK":state.level>=20?"B-RANK":state.level>=10?"C-RANK":state.level>=5?"D-RANK":"E-RANK";}
+function rank(){return state.level>=50?"SSS-RANK":state.level>=35?"SS-RANK":state.level>=25?"S-RANK":state.level>=20?"A-RANK":state.level>=15?"B-RANK":state.level>=10?"C-RANK":state.level>=5?"D-RANK":"E-RANK";}
 function need(){return 100+(state.level-1)*25;}
 function toast(msg){let t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200);}
 function makeQuests(){let seed=Number(today().replaceAll("-",""));let pool=[...questPool];let chosen=[];for(let i=0;i<5;i++){seed=(seed*9301+49297)%233280;let idx=seed%pool.length;chosen.push(pool.splice(idx,1)[0]);}return chosen.map((q,i)=>({id:today()+"-"+i,title:q[1],desc:q[2],icon:q[0],xp:q[3],coins:q[4],done:false}));}
@@ -27,25 +27,25 @@ function avatar(el){
   if(!el)return;
   const art=el.querySelector("img.avatar-art");
   const hairMap={spike:"hunter-form-1.webp",sweep:"hunter-form-2.webp",long:"hunter-form-3.webp",fringe:"hunter-form-1.webp",tied:"hunter-form-2.webp"};
-  if(art)art.src="assets/"+(hairMap[state.look.hair]||"hunter-form-1.webp");
+  if(art)art.src=""+(hairMap[state.look.hair]||"hunter-form-1.webp");
   el.dataset.hair=state.look.hair;el.dataset.accessory=state.look.accessory;
   el.dataset.outfit=state.look.outfit||"hunter";el.dataset.aura=state.look.aura||"blue";
 }
 function setPortraitArt(){
   const art=$("#mainAvatarArt");if(!art)return;
   const map={spike:"hunter-form-1.webp",sweep:"hunter-form-2.webp",long:"hunter-form-3.webp",fringe:"hunter-form-1.webp",tied:"hunter-form-2.webp"};
-  art.src="assets/"+(map[state.look.hair]||"hunter-form-1.webp");
+  art.src=""+(map[state.look.hair]||"hunter-form-1.webp");
   art.dataset.outfit=state.look.outfit||"hunter";art.dataset.hairColor=String(state.look.hairColor||"#161b2c").replace("#","");
   art.dataset.eyes=state.look.eyes||"blue";art.dataset.skin=state.look.skin||"medium";art.dataset.weapon=state.look.weapon||"katana";
 }
-function render(){ensureQuestsNoSave();$("#headerLevel").textContent="LVL "+state.level;$("#headerCoins").textContent=state.coins;$("#shopCoins").textContent=state.coins;$("#rankLabel").textContent=rank();$("#rankChip").textContent=rank();$("#levelText").textContent="LEVEL "+state.level;$("#xpText").textContent=state.xp+" / "+need()+" XP";$("#xpFill").style.width=(state.xp/need()*100)+"%";$("#displayName").textContent=state.name.toUpperCase();$("#equippedLabel").textContent=state.equipped;$("#totalXp").textContent=state.totalXp;$("#completedCount").textContent=state.completed;$("#earnedCoins").textContent=state.earnedCoins;$("#streak").textContent=state.streak+" days";$("#pointsSummary").textContent=state.points+" attribute points available";$("#availablePoints").textContent=state.points;$("#nameInput").value=state.name;$("#hairSelect").value=state.look.hair;$("#hairColor").value=state.look.hairColor;$("#accessorySelect").value=state.look.accessory;
+function render(){ensureQuestsNoSave();$("#headerLevel").textContent="LVL "+state.level;$("#headerCoins").textContent=state.coins;$("#headerXpText").textContent=state.xp+" / "+need()+" XP";$("#headerXpFill").style.width=(state.xp/need()*100)+"%";$("#shopCoins").textContent=state.coins;$("#rankLabel").textContent=rank();$("#rankChip").textContent=rank();$("#rankChipInline").textContent=rank();$$(".rank-card").forEach(el=>el.classList.toggle("current",el.classList.contains("rank-"+rank().toLowerCase().replace("-rank",""))));$("#levelText").textContent="LEVEL "+state.level;$("#xpText").textContent=state.xp+" / "+need()+" XP";$("#xpFill").style.width=(state.xp/need()*100)+"%";$("#displayName").textContent=state.name.toUpperCase();$("#equippedLabel").textContent=state.equipped;$("#totalXp").textContent=state.totalXp;$("#completedCount").textContent=state.completed;$("#earnedCoins").textContent=state.earnedCoins;$("#streak").textContent=state.streak+" days";$("#pointsSummary").textContent=state.points+" attribute points available";$("#availablePoints").textContent=state.points;$("#nameInput").value=state.name;$("#hairSelect").value=state.look.hair;$("#hairColor").value=state.look.hairColor;$("#accessorySelect").value=state.look.accessory;
   $("#outfitSelect").value=state.look.outfit||"hunter";$("#auraSelect").value=state.look.aura||"blue";$("#eyeSelect").value=state.look.eyes||"blue";$("#skinSelect").value=state.look.skin||"medium";$("#weaponSelect").value=state.look.weapon||"katana";
   $("#characterRank").textContent=rank()+" HUNTER";$("#portraitTitle").textContent=rank()+" HUNTER";$("#formTag").textContent=(state.look.aura||"blue").toUpperCase()+" AWAKENING";
   avatar($("#mainAvatar"));avatar($("#dashAvatar"));setPortraitArt();
   const scene=$("#portraitScene");if(scene){scene.dataset.aura=state.look.aura||"blue";scene.dataset.eyes=state.look.eyes||"blue";scene.dataset.skin=state.look.skin||"medium";}
   const art=$("#mainAvatarArt");if(art){art.dataset.outfit=state.look.outfit||"hunter";art.dataset.hairColor=state.look.hairColor;art.dataset.eyes=state.look.eyes||"blue";art.dataset.skin=state.look.skin||"medium";art.dataset.weapon=state.look.weapon||"katana";}
   $$("[data-outfit-choice]").forEach(b=>b.classList.toggle("selected",b.dataset.outfitChoice===(state.look.outfit||"hunter")));
-  $$("[data-aura-choice]").forEach(b=>b.classList.toggle("selected",b.dataset.auraChoice===(state.look.aura||"blue")));renderStats();renderQuests();renderShop();}
+  $$("[data-aura-choice]").forEach(b=>b.classList.toggle("selected",b.dataset.auraChoice===(state.look.aura||"blue")));$$("[data-hair-choice]").forEach(b=>b.classList.toggle("selected",b.dataset.hairChoice===(state.look.hair||"spike")));$$("[data-color-choice]").forEach(b=>b.classList.toggle("selected",b.dataset.colorChoice===(state.look.hairColor||"#161b2c")));renderStats();renderQuests();renderShop();}
 function ensureQuestsNoSave(){if(state.questDate!==today()){state.questDate=today();state.quests=makeQuests();localStorage.setItem("levelingUpSave",JSON.stringify(state));}}
 function renderStats(){let keys=Object.keys(state.stats);$("#miniStats").innerHTML=keys.slice(0,4).map(k=>`<div class="stat-row"><span>${k}</span><div class="stat-track"><i style="width:${Math.min(100,state.stats[k]*3)}%"></i></div><b>${state.stats[k]}</b></div>`).join("");$("#attributeList").innerHTML=keys.map(k=>`<div class="attribute-row"><div><b>${k}</b><small>${({Strength:"Physical training and resilience",Discipline:"Consistency and follow-through",Confidence:"Courage and social growth",Intelligence:"Learning and problem solving",Health:"Recovery and healthy habits",Wealth:"Saving and financial habits"})[k]}</small></div><span class="attribute-value">${state.stats[k]}</span><button class="upgrade" data-stat="${k}" ${state.points<1?"disabled":""}>+ Upgrade</button></div>`).join("");}
 function renderQuests(){let done=state.quests.filter(q=>q.done).length;$("#todaySummary").innerHTML=state.quests.slice(0,3).map(q=>`<div class="summary-quest"><span>${q.icon} ${q.title}</span><b>${q.done?"DONE":"+"+q.xp+" XP"}</b></div>`).join("")+`<p class="muted small">${done}/${state.quests.length} quests complete today</p>`;$("#questList").innerHTML=state.quests.map(q=>`<div class="quest ${q.done?"done":""}"><div class="quest-icon">${q.icon}</div><div class="quest-info"><b>${q.title}</b><small>${q.desc}</small></div><div class="reward">+${q.xp} XP<br>+${q.coins} ◈</div><button class="claim" data-quest="${q.id}" ${q.done?"disabled":""}>${q.done?"CLAIMED":"COMPLETE"}</button></div>`).join("");}
@@ -74,7 +74,7 @@ $("#nameInput").addEventListener("input",e=>{state.name=e.target.value||"PLAYER"
 $("#saveLook").addEventListener("click",()=>{state.name=$("#nameInput").value.trim()||"PLAYER";readLookControls();save();toast("Hunter appearance saved.");});
 $("#refreshQuests").addEventListener("click",()=>{if(state.questDate===today()){toast("Your daily quests are already active. New quests arrive tomorrow.");return;}ensureQuests();render();});
 $("#resetGame").addEventListener("click",()=>{if(confirm("Reset all RPG progress, character settings, coins and quests? This cannot be undone.")){localStorage.removeItem("levelingUpSave");state={...defaultState,stats:{...defaultState.stats},look:{...defaultState.look},owned:[],quests:[]};ensureQuests();save();tab("dashboard");toast("Game data reset.");}});
-ensureQuests();render();
+ensureQuests();render();tab("character");
 // Preview-style gallery controls: reuse the existing saved appearance model.
 document.addEventListener("click",e=>{
   const h=e.target.closest("[data-hair-choice]");
