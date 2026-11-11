@@ -38,92 +38,7 @@
         <div class="dashboard-grid">
           <article class="panel character-card">
             <div class="card-heading"><h3>Current character</h3><button class="text-button" data-goto="character">Customize ↗</button></div>
-            <div class="avatar-stage"><div class="avatar" id="dashAvatar">
-<svg class="avatar-art" viewBox="0 0 320 500" role="img" aria-label="Customizable anime shadow hunter character">
-  <defs>
-    <linearGradient id="skinGrad-dashAvatar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0c5"/><stop offset=".48" stop-color="#d99b7d"/><stop offset="1" stop-color="#945b58"/></linearGradient>
-    <linearGradient id="coatGrad-dashAvatar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="color-mix(in srgb,var(--outfit) 55%,#fff)"/><stop offset=".42" stop-color="var(--outfit)"/><stop offset="1" stop-color="color-mix(in srgb,var(--outfit) 45%,#050a17)"/></linearGradient>
-    <linearGradient id="hairGrad-dashAvatar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="color-mix(in srgb,var(--hair) 48%,#fff)"/><stop offset=".42" stop-color="var(--hair)"/><stop offset="1" stop-color="color-mix(in srgb,var(--hair) 55%,#020611)"/></linearGradient>
-    <linearGradient id="steel-dashAvatar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e4f4ff"/><stop offset=".25" stop-color="#7299c7"/><stop offset=".55" stop-color="#263e65"/><stop offset="1" stop-color="#a8d5f7"/></linearGradient>
-    <linearGradient id="eye-dashAvatar" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d9ffff"/><stop offset=".35" stop-color="#43d8ff"/><stop offset="1" stop-color="#1474df"/></linearGradient>
-    <radialGradient id="aura-dashAvatar"><stop stop-color="#57dfff" stop-opacity=".34"/><stop offset="1" stop-color="#397fff" stop-opacity="0"/></radialGradient>
-    <filter id="glow-dashAvatar" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="shadow-dashAvatar" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="8"/></filter>
-  </defs>
-  <!-- aura and ground -->
-  <ellipse cx="160" cy="465" rx="95" ry="13" fill="#020611" opacity=".8" filter="url(#shadow-dashAvatar)"/>
-  <ellipse cx="160" cy="250" rx="137" ry="194" fill="url(#aura-dashAvatar)"/>
-  <path class="aura-ring" d="M160 34 C63 50 30 164 48 306 C60 400 103 453 160 464 C217 453 260 400 272 306 C290 164 257 50 160 34Z" fill="none" stroke="#62dfff" stroke-width="2.5" stroke-dasharray="7 13" opacity=".45" filter="url(#glow-dashAvatar)"/>
-  <path d="M47 322 Q20 269 54 211 M273 322 Q300 269 266 211" fill="none" stroke="#6bdfff" stroke-width="3" opacity=".5" filter="url(#glow-dashAvatar)"/>
-  <path d="M63 110 L43 82 M256 130 L280 99 M56 375 L34 397 M263 371 L287 393" stroke="#7deaff" stroke-width="3" opacity=".7" stroke-linecap="round"/>
-  <!-- rear hair -->
-  <path d="M91 102 Q67 133 80 205 L65 307 Q94 291 108 250 L213 250 Q232 291 255 307 L238 191 Q255 111 215 77Z" fill="url(#hairGrad-dashAvatar)" stroke="#080e1b" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M94 127 Q84 190 100 263 M225 119 Q238 192 220 260" fill="none" stroke="#e5f2ff" stroke-opacity=".2" stroke-width="5"/>
-  <!-- neck -->
-  <path d="M130 177 L125 220 Q160 250 195 220 L190 174Z" fill="url(#skinGrad-dashAvatar)" stroke="#754c4b" stroke-width="2"/>
-  <!-- torso under suit -->
-  <path d="M111 211 L83 225 Q59 238 49 283 L30 433 Q93 466 160 466 Q227 466 290 433 L271 283 Q261 238 237 225 L209 211 L160 248Z" fill="url(#coatGrad-dashAvatar)" stroke="#9cccf2" stroke-width="3.5"/>
-  <path d="M111 215 L160 265 L209 215 L232 245 L194 322 L160 291 L126 322 L88 245Z" fill="#0b1425" stroke="#9dcdf0" stroke-width="3"/>
-  <path d="M160 263 L183 306 L160 414 L137 306Z" fill="#162b49" stroke="#76b7e8" stroke-width="2.5"/>
-  <path d="M137 306 L160 331 L183 306" fill="none" stroke="#d5efff" stroke-width="3"/>
-  <path d="M151 333 L160 350 L169 333 L178 389 L160 407 L142 389Z" fill="#243e65" stroke="#7ec6ee" stroke-width="2"/>
-  <path d="M160 350 L168 368 L160 384 L152 368Z" fill="#70efff" filter="url(#glow-dashAvatar)"/>
-  <!-- waist belt and coat panels -->
-  <path d="M77 372 Q160 391 243 372 L254 433 Q160 477 66 433Z" fill="#080f1d" stroke="#759bc7" stroke-width="3"/>
-  <path d="M84 389 Q160 407 236 389 L228 433 Q160 457 92 433Z" fill="#172d4b" stroke="#45688f" stroke-width="2"/>
-  <path d="M124 397 L196 397 L190 445 L130 445Z" fill="url(#steel-dashAvatar)" stroke="#d5eeff" stroke-width="2"/>
-  <path d="M160 405 L173 421 L160 438 L147 421Z" fill="#62eaff" stroke="#d9ffff" stroke-width="2" filter="url(#glow-dashAvatar)"/>
-  <path d="M90 300 L72 433 L104 449 L125 331 M230 300 L248 433 L216 449 L195 331" fill="none" stroke="#9ac7ec" stroke-opacity=".65" stroke-width="4"/>
-  <!-- shoulders and armor -->
-  <path d="M87 234 Q54 231 42 263 L30 319 L82 336 L111 278Z" fill="url(#steel-dashAvatar)" stroke="#d3edff" stroke-width="3"/>
-  <path d="M233 234 Q266 231 278 263 L290 319 L238 336 L209 278Z" fill="url(#steel-dashAvatar)" stroke="#d3edff" stroke-width="3"/>
-  <path d="M49 270 L82 258 L93 282 L74 316 L42 307Z M271 270 L238 258 L227 282 L246 316 L278 307Z" fill="#233d62" stroke="#82bce8" stroke-width="2"/>
-  <path d="M58 274 L80 266 M262 274 L240 266" stroke="#e2f7ff" stroke-width="3" opacity=".8"/>
-  <!-- arms and gauntlets -->
-  <path d="M43 296 Q26 330 35 388 L56 411 Q79 374 82 325 L74 300Z M277 296 Q294 330 285 388 L264 411 Q241 374 238 325 L246 300Z" fill="url(#coatGrad-dashAvatar)" stroke="#9bcaf0" stroke-width="3"/>
-  <path d="M35 369 L70 378 L63 424 L42 427 L28 405Z M285 369 L250 378 L257 424 L278 427 L292 405Z" fill="url(#steel-dashAvatar)" stroke="#d4efff" stroke-width="2.5"/>
-  <path d="M42 388 L62 394 M278 388 L258 394" stroke="#243e65" stroke-width="4"/>
-  <!-- face silhouette -->
-  <path d="M99 95 Q100 55 160 52 Q220 55 221 95 L210 166 Q201 211 160 224 Q119 211 110 166Z" fill="url(#skinGrad-dashAvatar)" stroke="#704b4b" stroke-width="2.5"/>
-  <path d="M112 151 Q117 191 145 205 M208 151 Q203 191 175 205" fill="none" stroke="#ffe1c9" stroke-opacity=".35" stroke-width="4"/>
-  <!-- eyes: sharp anime shape -->
-  <path d="M111 137 Q130 119 151 136 Q139 158 115 151Z M169 136 Q190 119 209 137 L205 151 Q181 158 169 136Z" fill="#f4f7ff"/>
-  <path d="M118 137 Q133 126 147 138 L143 150 Q129 155 118 145Z M173 138 Q187 126 202 137 L202 145 Q190 155 177 150Z" fill="url(#eye-dashAvatar)"/>
-  <ellipse cx="134" cy="140" rx="5" ry="9" fill="#081326"/><ellipse cx="188" cy="140" rx="5" ry="9" fill="#081326"/>
-  <circle cx="137" cy="135" r="3.2" fill="#fff"/><circle cx="191" cy="135" r="3.2" fill="#fff"/>
-  <path d="M108 134 Q130 116 153 131 M167 131 Q190 116 212 134" fill="none" stroke="#172035" stroke-width="7" stroke-linecap="round"/>
-  <path d="M112 126 L143 120 M177 120 L208 126" stroke="#f2d2bd" stroke-opacity=".45" stroke-width="2"/>
-  <!-- nose, mouth, face accents -->
-  <path d="M160 145 L153 174 L164 177" fill="none" stroke="#9c625c" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M146 194 Q160 201 174 194" fill="none" stroke="#743e47" stroke-width="3" stroke-linecap="round"/>
-  <path d="M116 168 L124 178 M204 168 L196 178" stroke="#f7c4a8" stroke-width="3" opacity=".6"/>
-  <!-- front hair styles -->
-  <g class="hair-style hair-spike" fill="url(#hairGrad-dashAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
-    <path d="M91 133 Q75 105 88 72 L75 36 L112 60 L121 13 L151 55 L170 8 L185 57 L229 29 L218 76 Q246 104 225 139 L207 126 L195 163 L176 132 L160 169 L144 132 L124 164 L112 128 L98 151Z"/>
-    <path d="M91 89 Q126 49 160 66 Q198 46 225 87" fill="none" stroke="#e6f4ff" stroke-opacity=".24" stroke-width="7"/>
-    <path d="M118 59 L130 111 M171 53 L169 110 M214 70 L194 117" fill="none" stroke="#f2fbff" stroke-opacity=".22" stroke-width="4"/>
-  </g>
-  <g class="hair-style hair-fringe" fill="url(#hairGrad-dashAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
-    <path d="M91 135 Q70 91 99 61 Q130 27 174 43 Q225 49 233 95 Q239 120 224 142 L208 127 L195 166 L176 131 L159 170 L142 132 L123 165 L111 130 L97 153Z"/>
-    <path d="M96 83 Q144 35 218 79" fill="none" stroke="#f1f8ff" stroke-opacity=".25" stroke-width="7"/>
-    <path d="M128 54 Q140 91 137 137 M171 48 Q181 87 168 137" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="4"/>
-  </g>
-  <g class="hair-style hair-long" fill="url(#hairGrad-dashAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
-    <path d="M91 135 Q70 91 99 61 Q130 27 174 43 Q225 49 233 95 Q239 120 224 142 L240 313 L210 280 L207 132 L195 166 L176 131 L159 170 L142 132 L123 165 L111 130 L97 153Z"/>
-    <path d="M96 83 Q144 35 218 79" fill="none" stroke="#f1f8ff" stroke-opacity=".25" stroke-width="7"/>
-  </g>
-  <g class="hair-style hair-buzz" fill="url(#hairGrad-dashAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
-    <path d="M95 119 Q83 65 125 47 Q176 24 213 59 Q232 78 222 125 Q194 94 160 96 Q123 92 95 119Z"/>
-    <path d="M107 71 Q157 42 208 74" fill="none" stroke="#f4fbff" stroke-opacity=".25" stroke-width="6"/>
-  </g>
-  <!-- optional cosmetics/accessories -->
-  <path class="headband" d="M98 105 Q160 82 222 105 L218 121 Q160 101 102 121Z" fill="#c6a65e" stroke="#fff0bd" stroke-width="3"/>
-  <path class="scarf" d="M111 218 Q160 239 209 218 L198 251 Q160 270 122 251Z" fill="#a72f51" stroke="#ffc0d0" stroke-width="2.5"/>
-  <path d="M122 245 L101 312 M198 245 L219 312" stroke="#c0e4ff" stroke-width="4" opacity=".5"/>
-  <!-- small light glints -->
-  <path d="M72 198 L79 183 L86 198 L79 213Z M248 198 L255 183 L262 198 L255 213Z" fill="#9ff5ff" opacity=".7" filter="url(#glow-dashAvatar)"/>
-</svg>
-</div></div>
+            <div class="avatar-stage"><div class="avatar" id="dashAvatar" data-hair="spike" data-outfit="hunter" data-aura="blue"><img class="avatar-art" src="assets/hunter-form-1.webp" alt="Anime hunter character"></div></div>
             <div class="character-name"><b id="displayName">CARDoSA</b><span id="equippedLabel">Starter outfit</span></div>
           </article>
           <article class="panel">
@@ -146,106 +61,60 @@
       </section>
 
       <section class="view" id="character">
-        <div class="section-heading"><div><p class="eyebrow">APPEARANCE</p><h2>Character customization</h2></div></div>
-        <div class="custom-grid">
-          <article class="panel preview-panel"><p class="eyebrow">LIVE PREVIEW</p><div class="avatar-stage large"><div class="avatar" id="mainAvatar">
-<svg class="avatar-art" viewBox="0 0 320 500" role="img" aria-label="Customizable anime shadow hunter character">
-  <defs>
-    <linearGradient id="skinGrad-mainAvatar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0c5"/><stop offset=".48" stop-color="#d99b7d"/><stop offset="1" stop-color="#945b58"/></linearGradient>
-    <linearGradient id="coatGrad-mainAvatar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="color-mix(in srgb,var(--outfit) 55%,#fff)"/><stop offset=".42" stop-color="var(--outfit)"/><stop offset="1" stop-color="color-mix(in srgb,var(--outfit) 45%,#050a17)"/></linearGradient>
-    <linearGradient id="hairGrad-mainAvatar" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="color-mix(in srgb,var(--hair) 48%,#fff)"/><stop offset=".42" stop-color="var(--hair)"/><stop offset="1" stop-color="color-mix(in srgb,var(--hair) 55%,#020611)"/></linearGradient>
-    <linearGradient id="steel-mainAvatar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e4f4ff"/><stop offset=".25" stop-color="#7299c7"/><stop offset=".55" stop-color="#263e65"/><stop offset="1" stop-color="#a8d5f7"/></linearGradient>
-    <linearGradient id="eye-mainAvatar" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d9ffff"/><stop offset=".35" stop-color="#43d8ff"/><stop offset="1" stop-color="#1474df"/></linearGradient>
-    <radialGradient id="aura-mainAvatar"><stop stop-color="#57dfff" stop-opacity=".34"/><stop offset="1" stop-color="#397fff" stop-opacity="0"/></radialGradient>
-    <filter id="glow-mainAvatar" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-    <filter id="shadow-mainAvatar" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="8"/></filter>
-  </defs>
-  <!-- aura and ground -->
-  <ellipse cx="160" cy="465" rx="95" ry="13" fill="#020611" opacity=".8" filter="url(#shadow-mainAvatar)"/>
-  <ellipse cx="160" cy="250" rx="137" ry="194" fill="url(#aura-mainAvatar)"/>
-  <path class="aura-ring" d="M160 34 C63 50 30 164 48 306 C60 400 103 453 160 464 C217 453 260 400 272 306 C290 164 257 50 160 34Z" fill="none" stroke="#62dfff" stroke-width="2.5" stroke-dasharray="7 13" opacity=".45" filter="url(#glow-mainAvatar)"/>
-  <path d="M47 322 Q20 269 54 211 M273 322 Q300 269 266 211" fill="none" stroke="#6bdfff" stroke-width="3" opacity=".5" filter="url(#glow-mainAvatar)"/>
-  <path d="M63 110 L43 82 M256 130 L280 99 M56 375 L34 397 M263 371 L287 393" stroke="#7deaff" stroke-width="3" opacity=".7" stroke-linecap="round"/>
-  <!-- rear hair -->
-  <path d="M91 102 Q67 133 80 205 L65 307 Q94 291 108 250 L213 250 Q232 291 255 307 L238 191 Q255 111 215 77Z" fill="url(#hairGrad-mainAvatar)" stroke="#080e1b" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M94 127 Q84 190 100 263 M225 119 Q238 192 220 260" fill="none" stroke="#e5f2ff" stroke-opacity=".2" stroke-width="5"/>
-  <!-- neck -->
-  <path d="M130 177 L125 220 Q160 250 195 220 L190 174Z" fill="url(#skinGrad-mainAvatar)" stroke="#754c4b" stroke-width="2"/>
-  <!-- torso under suit -->
-  <path d="M111 211 L83 225 Q59 238 49 283 L30 433 Q93 466 160 466 Q227 466 290 433 L271 283 Q261 238 237 225 L209 211 L160 248Z" fill="url(#coatGrad-mainAvatar)" stroke="#9cccf2" stroke-width="3.5"/>
-  <path d="M111 215 L160 265 L209 215 L232 245 L194 322 L160 291 L126 322 L88 245Z" fill="#0b1425" stroke="#9dcdf0" stroke-width="3"/>
-  <path d="M160 263 L183 306 L160 414 L137 306Z" fill="#162b49" stroke="#76b7e8" stroke-width="2.5"/>
-  <path d="M137 306 L160 331 L183 306" fill="none" stroke="#d5efff" stroke-width="3"/>
-  <path d="M151 333 L160 350 L169 333 L178 389 L160 407 L142 389Z" fill="#243e65" stroke="#7ec6ee" stroke-width="2"/>
-  <path d="M160 350 L168 368 L160 384 L152 368Z" fill="#70efff" filter="url(#glow-mainAvatar)"/>
-  <!-- waist belt and coat panels -->
-  <path d="M77 372 Q160 391 243 372 L254 433 Q160 477 66 433Z" fill="#080f1d" stroke="#759bc7" stroke-width="3"/>
-  <path d="M84 389 Q160 407 236 389 L228 433 Q160 457 92 433Z" fill="#172d4b" stroke="#45688f" stroke-width="2"/>
-  <path d="M124 397 L196 397 L190 445 L130 445Z" fill="url(#steel-mainAvatar)" stroke="#d5eeff" stroke-width="2"/>
-  <path d="M160 405 L173 421 L160 438 L147 421Z" fill="#62eaff" stroke="#d9ffff" stroke-width="2" filter="url(#glow-mainAvatar)"/>
-  <path d="M90 300 L72 433 L104 449 L125 331 M230 300 L248 433 L216 449 L195 331" fill="none" stroke="#9ac7ec" stroke-opacity=".65" stroke-width="4"/>
-  <!-- shoulders and armor -->
-  <path d="M87 234 Q54 231 42 263 L30 319 L82 336 L111 278Z" fill="url(#steel-mainAvatar)" stroke="#d3edff" stroke-width="3"/>
-  <path d="M233 234 Q266 231 278 263 L290 319 L238 336 L209 278Z" fill="url(#steel-mainAvatar)" stroke="#d3edff" stroke-width="3"/>
-  <path d="M49 270 L82 258 L93 282 L74 316 L42 307Z M271 270 L238 258 L227 282 L246 316 L278 307Z" fill="#233d62" stroke="#82bce8" stroke-width="2"/>
-  <path d="M58 274 L80 266 M262 274 L240 266" stroke="#e2f7ff" stroke-width="3" opacity=".8"/>
-  <!-- arms and gauntlets -->
-  <path d="M43 296 Q26 330 35 388 L56 411 Q79 374 82 325 L74 300Z M277 296 Q294 330 285 388 L264 411 Q241 374 238 325 L246 300Z" fill="url(#coatGrad-mainAvatar)" stroke="#9bcaf0" stroke-width="3"/>
-  <path d="M35 369 L70 378 L63 424 L42 427 L28 405Z M285 369 L250 378 L257 424 L278 427 L292 405Z" fill="url(#steel-mainAvatar)" stroke="#d4efff" stroke-width="2.5"/>
-  <path d="M42 388 L62 394 M278 388 L258 394" stroke="#243e65" stroke-width="4"/>
-  <!-- face silhouette -->
-  <path d="M99 95 Q100 55 160 52 Q220 55 221 95 L210 166 Q201 211 160 224 Q119 211 110 166Z" fill="url(#skinGrad-mainAvatar)" stroke="#704b4b" stroke-width="2.5"/>
-  <path d="M112 151 Q117 191 145 205 M208 151 Q203 191 175 205" fill="none" stroke="#ffe1c9" stroke-opacity=".35" stroke-width="4"/>
-  <!-- eyes: sharp anime shape -->
-  <path d="M111 137 Q130 119 151 136 Q139 158 115 151Z M169 136 Q190 119 209 137 L205 151 Q181 158 169 136Z" fill="#f4f7ff"/>
-  <path d="M118 137 Q133 126 147 138 L143 150 Q129 155 118 145Z M173 138 Q187 126 202 137 L202 145 Q190 155 177 150Z" fill="url(#eye-mainAvatar)"/>
-  <ellipse cx="134" cy="140" rx="5" ry="9" fill="#081326"/><ellipse cx="188" cy="140" rx="5" ry="9" fill="#081326"/>
-  <circle cx="137" cy="135" r="3.2" fill="#fff"/><circle cx="191" cy="135" r="3.2" fill="#fff"/>
-  <path d="M108 134 Q130 116 153 131 M167 131 Q190 116 212 134" fill="none" stroke="#172035" stroke-width="7" stroke-linecap="round"/>
-  <path d="M112 126 L143 120 M177 120 L208 126" stroke="#f2d2bd" stroke-opacity=".45" stroke-width="2"/>
-  <!-- nose, mouth, face accents -->
-  <path d="M160 145 L153 174 L164 177" fill="none" stroke="#9c625c" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M146 194 Q160 201 174 194" fill="none" stroke="#743e47" stroke-width="3" stroke-linecap="round"/>
-  <path d="M116 168 L124 178 M204 168 L196 178" stroke="#f7c4a8" stroke-width="3" opacity=".6"/>
-  <!-- front hair styles -->
-  <g class="hair-style hair-spike" fill="url(#hairGrad-mainAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
-    <path d="M91 133 Q75 105 88 72 L75 36 L112 60 L121 13 L151 55 L170 8 L185 57 L229 29 L218 76 Q246 104 225 139 L207 126 L195 163 L176 132 L160 169 L144 132 L124 164 L112 128 L98 151Z"/>
-    <path d="M91 89 Q126 49 160 66 Q198 46 225 87" fill="none" stroke="#e6f4ff" stroke-opacity=".24" stroke-width="7"/>
-    <path d="M118 59 L130 111 M171 53 L169 110 M214 70 L194 117" fill="none" stroke="#f2fbff" stroke-opacity=".22" stroke-width="4"/>
-  </g>
-  <g class="hair-style hair-fringe" fill="url(#hairGrad-mainAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
-    <path d="M91 135 Q70 91 99 61 Q130 27 174 43 Q225 49 233 95 Q239 120 224 142 L208 127 L195 166 L176 131 L159 170 L142 132 L123 165 L111 130 L97 153Z"/>
-    <path d="M96 83 Q144 35 218 79" fill="none" stroke="#f1f8ff" stroke-opacity=".25" stroke-width="7"/>
-    <path d="M128 54 Q140 91 137 137 M171 48 Q181 87 168 137" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="4"/>
-  </g>
-  <g class="hair-style hair-long" fill="url(#hairGrad-mainAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
-    <path d="M91 135 Q70 91 99 61 Q130 27 174 43 Q225 49 233 95 Q239 120 224 142 L240 313 L210 280 L207 132 L195 166 L176 131 L159 170 L142 132 L123 165 L111 130 L97 153Z"/>
-    <path d="M96 83 Q144 35 218 79" fill="none" stroke="#f1f8ff" stroke-opacity=".25" stroke-width="7"/>
-  </g>
-  <g class="hair-style hair-buzz" fill="url(#hairGrad-mainAvatar)" stroke="#07101f" stroke-width="4" stroke-linejoin="round">
-    <path d="M95 119 Q83 65 125 47 Q176 24 213 59 Q232 78 222 125 Q194 94 160 96 Q123 92 95 119Z"/>
-    <path d="M107 71 Q157 42 208 74" fill="none" stroke="#f4fbff" stroke-opacity=".25" stroke-width="6"/>
-  </g>
-  <!-- optional cosmetics/accessories -->
-  <path class="headband" d="M98 105 Q160 82 222 105 L218 121 Q160 101 102 121Z" fill="#c6a65e" stroke="#fff0bd" stroke-width="3"/>
-  <path class="scarf" d="M111 218 Q160 239 209 218 L198 251 Q160 270 122 251Z" fill="#a72f51" stroke="#ffc0d0" stroke-width="2.5"/>
-  <path d="M122 245 L101 312 M198 245 L219 312" stroke="#c0e4ff" stroke-width="4" opacity=".5"/>
-  <!-- small light glints -->
-  <path d="M72 198 L79 183 L86 198 L79 213Z M248 198 L255 183 L262 198 L255 213Z" fill="#9ff5ff" opacity=".7" filter="url(#glow-mainAvatar)"/>
-</svg>
-</div></div><label class="field-label">Character name<input id="nameInput" maxlength="18" value="CARDOSA"></label></article>
-          <article class="panel customization">
-            <h3>Build your look</h3>
-            <label class="field-label">Hairstyle<select id="hairSelect"><option value="spike">Spiked</option><option value="fringe">Fringe</option><option value="long">Long</option><option value="buzz">Buzz cut</option></select></label>
-            <label class="field-label">Hair color<select id="hairColor"><option value="#161b2c">Midnight</option><option value="#6b3d24">Brown</option><option value="#d7d9e4">Silver</option><option value="#315edb">Blue</option><option value="#8d2d3f">Crimson</option></select></label>
-            <label class="field-label">Outfit color<select id="outfitColor"><option value="#243e78">Royal blue</option><option value="#242936">Shadow black</option><option value="#7c2638">Crimson</option><option value="#28745f">Emerald</option><option value="#dddde5">Silver</option></select></label>
-            <label class="field-label">Accessory<select id="accessorySelect"><option value="none">None</option><option value="headband">Headband</option><option value="glow">Energy aura</option><option value="scarf">Scarf</option></select></label>
-            <p class="muted small">Changes appear instantly and are saved automatically in this browser.</p>
-            <button class="primary-button" id="saveLook">Save appearance</button>
-          </article>
+  <div class="section-heading character-heading">
+    <div><p class="eyebrow">AWAKENING / APPEARANCE</p><h2>Character customization</h2><p class="muted">Shape your hunter. Every choice is saved with your player profile.</p></div>
+    <span class="rank-chip" id="characterRank">E-RANK HUNTER</span>
+  </div>
+  <div class="anime-creator">
+    <article class="anime-portrait panel">
+      <div class="portrait-topline"><span class="eyebrow">LIVE CHARACTER PREVIEW</span><span class="form-tag" id="formTag">HUNTER FORM</span></div>
+      <div class="portrait-scene" id="portraitScene">
+        <div class="portrait-moon"></div><div class="portrait-aura aura-blue" id="portraitAura"></div>
+        <div class="portrait-art-wrap">
+          <img id="mainAvatarArt" class="portrait-art" src="assets/hunter-form-1.webp" alt="Full-body anime hunter in dark armor">
+          <div class="portrait-vignette"></div>
         </div>
-      </section>
+        <div class="portrait-caption"><span>CURRENT AWAKENING</span><strong id="portraitTitle">E-RANK HUNTER</strong></div>
+      </div>
+      <label class="field-label name-field">Hunter name<input id="nameInput" maxlength="18" value="CARDOSA"></label>
+    </article>
 
+    <div class="creator-controls">
+      <article class="panel build-panel">
+        <div class="panel-title-row"><div><p class="eyebrow">01 / IDENTITY</p><h3>Build your look</h3></div><span class="mini-sigil">✦</span></div>
+        <div class="control-grid">
+          <label class="field-label">Hairstyle<select id="hairSelect"><option value="spike">Messy spiky</option><option value="sweep">Silver sweep</option><option value="long">Long shadow</option><option value="fringe">Falling fringe</option><option value="tied">Tied back</option><option value="buzz">Buzz cut</option></select></label>
+          <label class="field-label">Hair color<select id="hairColor"><option value="#161b2c">Midnight black</option><option value="#d7d9e4">Silver</option><option value="#6b3d24">Dark brown</option><option value="#315edb">Azure blue</option><option value="#7d35b8">Violet</option><option value="#8d2d3f">Crimson</option></select></label>
+          <label class="field-label">Eye color<select id="eyeSelect"><option value="blue">Glowing blue</option><option value="violet">Violet</option><option value="red">Crimson</option><option value="gold">Gold</option><option value="ice">Ice silver</option></select></label>
+          <label class="field-label">Skin tone<select id="skinSelect"><option value="medium">Warm medium</option><option value="light">Light</option><option value="tan">Tan</option><option value="deep">Deep</option></select></label>
+          <label class="field-label">Outfit<select id="outfitSelect"><option value="hunter">Hunter coat</option><option value="combat">Combat gear</option><option value="royal">Royal cloak</option></select></label>
+          <label class="field-label">Weapon<select id="weaponSelect"><option value="katana">Shadow katana</option><option value="greatsword">Greatsword</option><option value="daggers">Twin daggers</option><option value="none">No weapon</option></select></label>
+          <label class="field-label">Accessory<select id="accessorySelect"><option value="none">None</option><option value="headband">Hunter headband</option><option value="scarf">Crimson scarf</option><option value="glasses">Dark glasses</option></select></label>
+          <label class="field-label">Transformation<select id="auraSelect"><option value="blue">Blue awakening</option><option value="violet">Violet sovereign</option><option value="red">Crimson rage</option><option value="gold">Golden ascension</option><option value="shadow">Shadow monarch</option><option value="none">Suppress aura</option></select></label>
+        </div>
+        <button class="primary-button save-appearance" id="saveLook"><span>✦</span> Save appearance</button>
+        <p class="muted small save-note">Appearance saves to this browser alongside your existing RPG progress.</p>
+      </article>
+      <article class="panel style-panel">
+        <div class="panel-title-row"><div><p class="eyebrow">02 / EQUIPMENT</p><h3>Hunter loadout</h3></div><span class="eyebrow">SELECT A FORM</span></div>
+        <div class="style-options" id="outfitOptions">
+          <button class="style-option selected" data-outfit-choice="hunter"><span class="gear-icon coat-icon">♜</span><b>Hunter coat</b><small>Classic shadow hunter</small></button>
+          <button class="style-option" data-outfit-choice="combat"><span class="gear-icon">⬡</span><b>Combat gear</b><small>Battle-ready armor</small></button>
+          <button class="style-option" data-outfit-choice="royal"><span class="gear-icon">♛</span><b>Royal cloak</b><small>Sovereign regalia</small></button>
+        </div>
+        <div class="panel-title-row transformation-title"><div><p class="eyebrow">03 / AWAKENING</p><h3>Transformation aura</h3></div></div>
+        <div class="aura-options" id="auraOptions">
+          <button class="aura-option selected" data-aura-choice="blue"><i class="aura-swatch blue"></i><span>Blue</span></button>
+          <button class="aura-option" data-aura-choice="violet"><i class="aura-swatch violet"></i><span>Violet</span></button>
+          <button class="aura-option" data-aura-choice="red"><i class="aura-swatch red"></i><span>Crimson</span></button>
+          <button class="aura-option" data-aura-choice="gold"><i class="aura-swatch gold"></i><span>Gold</span></button>
+          <button class="aura-option" data-aura-choice="shadow"><i class="aura-swatch shadow"></i><span>Shadow</span></button>
+          <button class="aura-option" data-aura-choice="none"><i class="aura-swatch none"></i><span>None</span></button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
       <section class="view" id="quests">
         <div class="section-heading"><div><p class="eyebrow">TAKE ACTION</p><h2>Daily quest board</h2></div><button class="secondary-button" id="refreshQuests">New daily quests ↻</button></div>
         <p class="muted">Complete a quest in real life, then claim its reward. Daily quests refresh by date; completed rewards stay recorded.</p>
