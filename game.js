@@ -75,3 +75,10 @@ $("#saveLook").addEventListener("click",()=>{state.name=$("#nameInput").value.tr
 $("#refreshQuests").addEventListener("click",()=>{if(state.questDate===today()){toast("Your daily quests are already active. New quests arrive tomorrow.");return;}ensureQuests();render();});
 $("#resetGame").addEventListener("click",()=>{if(confirm("Reset all RPG progress, character settings, coins and quests? This cannot be undone.")){localStorage.removeItem("levelingUpSave");state={...defaultState,stats:{...defaultState.stats},look:{...defaultState.look},owned:[],quests:[]};ensureQuests();save();tab("dashboard");toast("Game data reset.");}});
 ensureQuests();render();
+// Preview-style gallery controls: reuse the existing saved appearance model.
+document.addEventListener("click",e=>{
+  const h=e.target.closest("[data-hair-choice]");
+  if(h){$("#hairSelect").value=h.dataset.hairChoice;readLookControls();$$("[data-hair-choice]").forEach(x=>x.classList.toggle("selected",x===h));}
+  const c=e.target.closest("[data-color-choice]");
+  if(c){$("#hairColor").value=c.dataset.colorChoice;readLookControls();$$("[data-color-choice]").forEach(x=>x.classList.toggle("selected",x===c));}
+});

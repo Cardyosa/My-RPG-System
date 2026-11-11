@@ -70,3 +70,46 @@
 .portrait-scene:after{content:"";position:absolute;z-index:3;top:19%;left:50%;width:68px;height:18px;transform:translateX(-50%);pointer-events:none;opacity:.8;background:radial-gradient(ellipse at 28% 50%,var(--eye-glow,#51c9ff) 0 10%,transparent 34%),radial-gradient(ellipse at 72% 50%,var(--eye-glow,#51c9ff) 0 10%,transparent 34%);filter:blur(3px);mix-blend-mode:screen}
 .portrait-scene[data-eyes="violet"]{--eye-glow:#b56aff}.portrait-scene[data-eyes="red"]{--eye-glow:#ff3b57}.portrait-scene[data-eyes="gold"]{--eye-glow:#ffd66a}.portrait-scene[data-eyes="ice"]{--eye-glow:#e2f5ff}
 
+
+
+/* === Preview-matched hunter creator layout === */
+#character.view.active{display:block}
+#character .character-heading{margin-bottom:14px}
+#character .character-heading h2{font-size:clamp(28px,3vw,42px);letter-spacing:.02em;text-transform:uppercase}
+.anime-creator{display:grid!important;grid-template-columns:minmax(300px,1.02fr) minmax(260px,.78fr) minmax(340px,1.16fr)!important;gap:14px!important;align-items:stretch}
+.anime-portrait{grid-column:1;min-width:0;padding:12px!important;background:linear-gradient(150deg,#10172f,#070b18 75%)!important;border:1px solid #433b77!important}
+.portrait-scene{height:clamp(500px,67vh,760px)!important;max-height:none!important;min-height:500px!important;background:radial-gradient(ellipse at 48% 30%,#243d76 0,#111a36 48%,#070b17 85%)!important}
+.portrait-moon{width:155px!important;height:155px!important;right:7%!important;top:5%!important}
+.portrait-art{object-fit:contain!important;object-position:center bottom!important;mix-blend-mode:normal!important;filter:drop-shadow(0 0 24px #347cff77)!important}
+.portrait-vignette{pointer-events:none}
+.portrait-caption{background:linear-gradient(90deg,#170d34,#0b1228);border:1px solid #8b51ef;box-shadow:0 0 20px #873cff55}
+.creator-controls{display:contents!important}
+.build-panel{grid-column:2;min-width:0;padding:16px!important}
+.style-panel{grid-column:3;min-width:0;padding:16px!important}
+.control-grid{grid-template-columns:1fr!important;gap:10px!important}
+.control-grid select{min-height:39px}
+.panel-title-row h3{font-size:22px!important}
+.save-appearance{min-height:52px;font-size:15px;letter-spacing:.04em;text-transform:uppercase;background:linear-gradient(100deg,#8b39ff,#4620a9)!important;box-shadow:0 0 22px #9b43ff77!important}
+.style-options{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.style-option{min-height:115px}
+.gear-icon{height:54px}
+.asset-gallery{margin:18px 0 8px;padding-top:13px;border-top:1px solid #34345f}
+.asset-gallery h4{font:italic 700 17px Georgia,serif;letter-spacing:.08em;color:#d9c5ff;margin:0 0 10px}
+.asset-thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.asset-thumb{position:relative;min-width:0;height:106px;overflow:hidden;padding:0;border-radius:9px;border:1px solid #38416b;background:#0a1020;color:#eaf0ff;cursor:pointer}
+.asset-thumb img{width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:.8}
+.asset-thumb span{position:absolute;left:0;right:0;bottom:0;padding:5px 2px;background:#070b18d9;font-size:10px}
+.asset-thumb.selected,.asset-thumb:hover{border:2px solid #b36aff;box-shadow:0 0 16px #a64cff88}
+.color-swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.color-swatches button{height:35px;border-radius:8px;border:2px solid #4a5275;background:var(--swatch);cursor:pointer}
+.color-swatches button:nth-child(1){--swatch:#161b2c}.color-swatches button:nth-child(2){--swatch:#d7d9e4}.color-swatches button:nth-child(3){--swatch:#6b3d24}.color-swatches button:nth-child(4){--swatch:#315edb}.color-swatches button:nth-child(5){--swatch:#7d35b8}.color-swatches button:nth-child(6){--swatch:#8d2d3f}
+.color-swatches button.selected{border:2px solid #fff;box-shadow:0 0 13px #a64cff}
+.aura-options{grid-template-columns:repeat(3,1fr)!important}
+.rank-progression{display:flex;align-items:center;justify-content:space-between;gap:4px;margin-top:12px;padding:10px 5px;background:#090d1b;border:1px solid #34345f;border-radius:10px}
+.rank-progression>i{color:#a78bfa;font-style:normal}
+.rank-step{display:flex;flex-direction:column;align-items:center;gap:2px;color:#8794b5;font-weight:800;font-size:13px}
+.rank-step small{font-size:8px;letter-spacing:.08em}
+.rank-step.current{color:#ffd36b;text-shadow:0 0 12px #ffb72e}
+#character .section-heading .rank-chip{box-shadow:0 0 16px #8d42ff55}
+@media(max-width:1100px){.anime-creator{grid-template-columns:minmax(280px,.9fr) minmax(260px,1fr)!important}.anime-portrait{grid-column:1!important}.creator-controls{display:grid!important;grid-column:2!important;grid-template-columns:1fr!important}.build-panel,.style-panel{grid-column:1!important}}
+@media(max-width:720px){.anime-creator{grid-template-columns:1fr!important}.anime-portrait,.creator-controls{grid-column:1!important}.creator-controls{display:grid!important}.portrait-scene{height:520px!important}.rank-progression{flex-wrap:wrap}}
